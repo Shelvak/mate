@@ -25,6 +25,7 @@ end
 
 group :development do
   gem 'puma'
+  gem 'sqlite3'
 end
 
 group :test do
