@@ -1,0 +1,56 @@
+<% if @movements.empty? %>
+  <%= render 'shared/empty_index' %>
+<% else %>
+  <div class="row">
+    <div class="span12">
+      <table class="table resource-list">
+        <thead>
+          <tr>
+            <th><%= Movement.human_attribute_name 'charged_at' %></th>
+            <th><%= Movement.human_attribute_name 'mov_number' %></th>
+            <th><%= Movement.human_attribute_name 'amount' %></th>
+            <th><%= Movement.human_attribute_name 'total_amount' %></th>
+            <th><%= Movement.human_attribute_name 'comment' %></th>
+            <th><%= Movement.human_attribute_name 'devoted' %></th>
+            <th><%= Movement.human_attribute_name 'deposited_in' %></th>
+            <th><%= Movement.human_attribute_name 'devoted_at' %></th>
+            <th><%= Movement.human_attribute_name 'code_id' %></th>
+            <th><%= Movement.human_attribute_name 'bank_id' %></th>
+            <th><%= Movement.human_attribute_name 'client_id' %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @movements.each do |movement| %>
+            <tr>
+              <td><%= movement.charged_at %></td>
+              <td><%= movement.mov_number %></td>
+              <td><%= movement.amount %></td>
+              <td><%= movement.total_amount %></td>
+              <td><%= movement.comment %></td>
+              <td><%= movement.devoted %></td>
+              <td><%= movement.deposited_in %></td>
+              <td><%= movement.devoted_at %></td>
+              <td><%= movement.code_id %></td>
+              <td><%= movement.bank_id %></td>
+              <td><%= movement.client_id %></td>
+              <td><%= link_to_show movement %></td>
+              <td><%= link_to_edit edit_movement_path(movement) if can? :update, movement %></td>
+              <td><%= link_to_destroy movement if can? :destroy, movement %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%= pagination_links(@movements) %>
+<% end %>
+
+<div class="form-actions">
+  <%= link_to(
+    t('view.movements.new', default: :'label.new'),
+    new_movement_path, class: 'btn btn-primary'
+  ) if can? :create, Movement %>
+</div>
