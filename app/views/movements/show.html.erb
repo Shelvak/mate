@@ -1,0 +1,53 @@
+<div class="readonly-data">
+  <h2><%= @movement %></h2>
+
+  <p>
+    <strong><%= Movement.human_attribute_name 'charged_at' %></strong>:
+    <%= @movement.charged_at %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'mov_number' %></strong>:
+    <%= @movement.mov_number %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'amount' %></strong>:
+    <%= @movement.amount %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'total_amount' %></strong>:
+    <%= @movement.total_amount %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'comment' %></strong>:
+    <%= @movement.comment %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'devoted' %></strong>:
+    <%= @movement.devoted %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'deposited_in' %></strong>:
+    <%= @movement.deposited_in %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'devoted_at' %></strong>:
+    <%= @movement.devoted_at %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'code_id' %></strong>:
+    <%= @movement.code_id %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'bank_id' %></strong>:
+    <%= @movement.bank_id %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'client_id' %></strong>:
+    <%= @movement.client_id %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_movement_path(@movement) if can? :update, @movement %> |
+  <%= link_to t('label.list'), movements_path %>
+</div>

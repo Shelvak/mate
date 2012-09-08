@@ -1,4 +1,6 @@
 Mate::Application.routes.draw do
+  resources :movements
+
   devise_for :users
   
   resources :users do
