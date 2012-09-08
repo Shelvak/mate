@@ -9,13 +9,16 @@ class MovementsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:movements)
+    assert_select '#unexpected_error', false
+    assert_template 'outflows/index'
   end
 
   test "should get new" do
     get :new
     assert_response :success
     assert_not_nil assigns(:movements)
-    assert_template 'movements/index'
+    assert_select '#unexpected_error', false
+    assert_template 'movements/new'
   end
 
   test "should create movement" do
@@ -29,16 +32,25 @@ class MovementsControllerTest < ActionController::TestCase
   test "should show movement" do
     get :show, id: @movement
     assert_response :success
+    assert_not_nil assigns(:movements)
+    assert_select '#unexpected_error', false
+    assert_template 'movements/show'
   end
 
   test "should get edit" do
     get :edit, id: @movement
     assert_response :success
+    assert_not_nil assigns(:movements)
+    assert_select '#unexpected_error', false
+    assert_template 'movements/edit'
   end
 
   test "should update movement" do
-    put :update, id: @movement, movement: { @movement.amount = 3.23  } 
-    assert_redirected_to movement_path(assigns(:movement))
+    put :update, id: @movement,  
+      outflow: Fabricate.attributes_for(:movement, amount: 3.23)
+  
+    assert_redirected_to movement_url(assigns(:movement))
+    assert_equal 3.23, @movement.reload.amount  
   end
 
   test "should destroy movement" do
@@ -46,6 +58,6 @@ class MovementsControllerTest < ActionController::TestCase
       delete :destroy, id: @movement
     end
 
-    assert_redirected_to movements_path
+    assert_redirected_to movements_url
   end
 end

@@ -105,7 +105,6 @@ GEM
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
-    pg (0.14.0)
     pjax_rails (0.3.3)
       jquery-rails
     polyglot (0.3.3)
@@ -204,7 +203,6 @@ DEPENDENCIES
   magick_columns
   minitest
   paper_trail
-  pg
   pjax_rails
   puma
   rails (= 3.2.8)
