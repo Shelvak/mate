@@ -10,6 +10,9 @@
       user:
         one: 'Usuario'
         other: 'Usuarios'
+      movement:
+        one: 'Movimiento'
+        other: 'Movimientos'
       
     attributes:
       user:
@@ -22,6 +25,21 @@
           one: 'Perfil'
           other: 'Perfiles'
         remember_me: 'Recordarme'
+
+      movement:
+        charged_at: 'Fecha carga'
+        mov_number: 'Numero de movimiento'
+        amount: 'Importe'
+        total_amount: 'Total'
+        comment: 'Comentarios'
+        devoted: 'Entregado a'
+        deposited_in: 'Depositado en'
+        devoted_at: 'Fecha deposito'
+        bank_id: 'Banco sucursal'
+        client_id: 'Recibido a'
+        code_id: 'Codigo'
+
+
         
   errors:
     title: 'Error'
@@ -43,6 +61,8 @@
     actions:
       logout: 'Salir de la aplicación'
     users: 'Usuarios'
+    movements: 'Movimientos'
+
     
   messages:
     confirmation: '¿Está seguro?'
@@ -72,3 +92,15 @@
       roles:
         admin: 'Administrador'
         regular: 'Normal'
+
+    movements:
+      index_title: 'Listado de movimientos'
+      show_title: 'Detalle de movimiento'
+      new_title: 'Nuevo movimiento'
+      edit_title: 'Modificar movimiento'
+      correctly_created: 'Movimiento agregado correctamente.'
+      correctly_updated: 'Movimiento actualizado correctamente.'
+      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
+      new: 'Nuevo movimiento'
