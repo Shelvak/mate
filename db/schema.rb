@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306131941) do
+ActiveRecord::Schema.define(:version => 20120908201957) do
+
+  create_table "banks", :force => true do |t|
+    t.string   "name",                                                       :null => false
+    t.string   "website"
+    t.decimal  "amount",     :precision => 15, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",                                   :null => false
