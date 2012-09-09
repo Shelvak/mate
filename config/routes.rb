@@ -1,5 +1,6 @@
 Mate::Application.routes.draw do
   resources :movements
+  resources :banks
 
   devise_for :users
   

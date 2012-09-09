@@ -7,11 +7,18 @@
     
   activerecord:
     models:
+      bank:
+        one: 'Banco'
+        other: 'Bancos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
       
     attributes:
+      bank:
+        name: 'Nombre'
+        website: 'Sitio web'
+        amount: 'Saldo'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -42,12 +49,25 @@
   menu:
     actions:
       logout: 'Salir de la aplicación'
+    banks: 'Bancos'
     users: 'Usuarios'
     
   messages:
     confirmation: '¿Está seguro?'
     
   view:
+    banks:
+      index_title: 'Listado de bancos'
+      show_title: 'Detalle de banco'
+      new_title: 'Nuevo banco'
+      edit_title: 'Modificar banco'
+      correctly_created: 'Banco agregado correctamente.'
+      correctly_updated: 'Banco actualizado correctamente.'
+      stale_object_error: 'El banco no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
+      new: 'Nuevo banco'
+      edit: 'Modificar banco'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'
