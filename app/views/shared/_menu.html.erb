@@ -12,6 +12,10 @@
             <%= show_menu_link(
               name: 'users', controllers: 'users', path: users_path
             ) if can?(:read, User) %>
+                    
+          <%= show_menu_link(
+              name: 'movements', controllers: 'movements', path: movements_path
+          ) if can?(:read, Movement) %>
           </ul>
           <ul class="nav">
             <%= show_menu_link(

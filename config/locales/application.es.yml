@@ -40,6 +40,7 @@
           one: 'Perfil'
           other: 'Perfiles'
         remember_me: 'Recordarme'
+      
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Numero de movimiento'

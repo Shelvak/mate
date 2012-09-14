@@ -2,6 +2,10 @@
   <h2><%= @movement %></h2>
 
   <p>
+    <strong><%= Movement.human_attribute_name 'code_id' %></strong>:
+    <%= @movement.code_id %>
+  </p>
+  <p>
     <strong><%= Movement.human_attribute_name 'charged_at' %></strong>:
     <%= @movement.charged_at %>
   </p>
@@ -10,12 +14,20 @@
     <%= @movement.mov_number %>
   </p>
   <p>
+    <strong><%= Movement.human_attribute_name 'bank_id' %></strong>:
+    <%= @movement.bank_id %>
+  </p>
+  <p>
     <strong><%= Movement.human_attribute_name 'amount' %></strong>:
     <%= @movement.amount %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'total_amount' %></strong>:
     <%= @movement.total_amount %>
+  </p>
+  <p>
+    <strong><%= Movement.human_attribute_name 'client_id' %></strong>:
+    <%= @movement.client_id %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'comment' %></strong>:
@@ -32,18 +44,6 @@
   <p>
     <strong><%= Movement.human_attribute_name 'devoted_at' %></strong>:
     <%= @movement.devoted_at %>
-  </p>
-  <p>
-    <strong><%= Movement.human_attribute_name 'code_id' %></strong>:
-    <%= @movement.code_id %>
-  </p>
-  <p>
-    <strong><%= Movement.human_attribute_name 'bank_id' %></strong>:
-    <%= @movement.bank_id %>
-  </p>
-  <p>
-    <strong><%= Movement.human_attribute_name 'client_id' %></strong>:
-    <%= @movement.client_id %>
   </p>
   
 </div>
