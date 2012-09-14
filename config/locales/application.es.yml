@@ -7,11 +7,29 @@
     
   activerecord:
     models:
+      advance:
+        one: 'Anticipo'
+        other: 'Anticipos'
+      bank:
+        one: 'Banco'
+        other: 'Bancos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
+      movement:
+        one: 'Movimiento'
+        other: 'Movimientos'
       
     attributes:
+      advance:
+        charged_at: 'Fecha carga'
+        amount: 'Importe'
+        detail: 'Detalle'
+        state: 'Estado'
+      bank:
+        name: 'Nombre'
+        website: 'Sitio web'
+        amount: 'Saldo'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -22,6 +40,18 @@
           one: 'Perfil'
           other: 'Perfiles'
         remember_me: 'Recordarme'
+      movement:
+        charged_at: 'Fecha carga'
+        mov_number: 'Numero de movimiento'
+        amount: 'Importe'
+        total_amount: 'Total'
+        comment: 'Comentarios'
+        devoted: 'Entregado a'
+        deposited_in: 'Depositado en'
+        devoted_at: 'Fecha deposito'
+        bank_id: 'Banco sucursal'
+        client_id: 'Recibido a'
+        code_id: 'Codigo'
         
   errors:
     title: 'Error'
@@ -42,12 +72,38 @@
   menu:
     actions:
       logout: 'Salir de la aplicación'
+    advances: 'Adelantos'
+    banks: 'Bancos'
     users: 'Usuarios'
+    movements: 'Movimientos'
     
   messages:
     confirmation: '¿Está seguro?'
     
   view:
+    advances: 
+      index_title: 'Listado de anticipos'
+      show_title: 'Detalle de anticipo'
+      new_title: 'Nuevo anticipo'
+      edit_title: 'Modificar anticipo'
+      correctly_created: 'Anticipo agregado correctamente.'
+      correctly_updated: 'Anticipo actualizado correctamente.'
+      stale_object_error: 'El anticipo no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún anticipo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo anticipo</span>'
+      new: 'Nuevo anticipo'
+    banks:
+      index_title: 'Listado de bancos'
+      show_title: 'Detalle de banco'
+      new_title: 'Nuevo banco'
+      edit_title: 'Modificar banco'
+      correctly_created: 'Banco agregado correctamente.'
+      correctly_updated: 'Banco actualizado correctamente.'
+      stale_object_error: 'El banco no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
+      new: 'Nuevo banco'
+      edit: 'Modificar banco'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'
@@ -72,3 +128,15 @@
       roles:
         admin: 'Administrador'
         regular: 'Normal'
+
+    movements:
+      index_title: 'Listado de movimientos'
+      show_title: 'Detalle de movimiento'
+      new_title: 'Nuevo movimiento'
+      edit_title: 'Modificar movimiento'
+      correctly_created: 'Movimiento agregado correctamente.'
+      correctly_updated: 'Movimiento actualizado correctamente.'
+      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
+      new: 'Nuevo movimiento'

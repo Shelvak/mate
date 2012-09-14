@@ -93,4 +93,8 @@ module ApplicationHelper
     
     link_to '&#xe05a;'.html_safe, *args, options
   end
+
+  def link_to_website(website)
+    website ? link_to(website, "http://#{website}", target: '_blank') : ''
+  end
 end
