@@ -1,4 +1,5 @@
 Mate::Application.routes.draw do
+  resources :advances
   resources :movements
   resources :banks
 

@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905143428) do
+ActiveRecord::Schema.define(:version => 20120910223229) do
+
+  create_table "advances", :force => true do |t|
+    t.date     "charged_at",                                :null => false
+    t.text     "detail",                                    :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
+    t.boolean  "state"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "banks", :force => true do |t|
+    t.string   "name",                                                       :null => false
+    t.string   "website"
+    t.decimal  "amount",     :precision => 15, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+  end
 
   create_table "movements", :force => true do |t|
     t.date     "charged_at",                                  :null => false
@@ -27,15 +44,6 @@ ActiveRecord::Schema.define(:version => 20120905143428) do
     t.integer  "client_id",                                   :null => false
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
-
-ActiveRecord::Schema.define(:version => 20120908201957) do
-
-  create_table "banks", :force => true do |t|
-    t.string   "name",                                                       :null => false
-    t.string   "website"
-    t.decimal  "amount",     :precision => 15, :scale => 2, :default => 0.0
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
   end
 
   create_table "users", :force => true do |t|

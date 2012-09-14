@@ -16,6 +16,11 @@
           </ul>
           <ul class="nav">
             <%= show_menu_link(
+              name: 'advances', controllers: 'advances', path: advances_path
+            ) if can?(:read, User) %>
+          </ul>
+          <ul class="nav">
+            <%= show_menu_link(
               name: 'banks', controllers: 'banks', path: banks_path
             ) if can?(:read, User) %>
           </ul>
