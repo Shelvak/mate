@@ -50,8 +50,10 @@ class AdvancesControllerTest < ActionController::TestCase
 
   test "should update advance" do
     assert_no_difference 'Advance.count' do
-      put :update, id: @advance, advance: Fabricate.attributes_for(:advance, amount: 100.50)
+      put :update, id: @advance,
+      advance: Fabricate.attributes_for(:advance, amount: 100.50)
     end
+
     assert_redirected_to advance_url(assigns(:advance))
     assert_equal 100.50, @advance.reload.amount
   end

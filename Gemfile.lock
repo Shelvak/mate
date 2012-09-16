@@ -203,6 +203,7 @@ DEPENDENCIES
   magick_columns
   minitest
   paper_trail
+  pg
   pjax_rails
   puma
   rails (= 3.2.8)

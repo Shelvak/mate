@@ -49,5 +49,4 @@ class AdvanceTest < ActiveSupport::TestCase
     assert_equal [error_message_from_model(@advance, :state, :inclusion)],
       @advance.errors[:state]
   end
-
 end

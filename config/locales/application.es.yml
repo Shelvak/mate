@@ -111,6 +111,16 @@
       empty_search:
         title:
           html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
+    movements:
+      index_title: 'Listado de movimientos'
+      show_title: 'Detalle de movimiento'
+      new_title: 'Nuevo movimiento'
+      edit_title: 'Modificar movimiento'
+      correctly_created: 'Movimiento agregado correctamente.'
+      correctly_updated: 'Movimiento actualizado correctamente.'
+      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
@@ -129,15 +139,4 @@
       roles:
         admin: 'Administrador'
         regular: 'Normal'
-
-    movements:
-      index_title: 'Listado de movimientos'
-      show_title: 'Detalle de movimiento'
-      new_title: 'Nuevo movimiento'
-      edit_title: 'Modificar movimiento'
-      correctly_created: 'Movimiento agregado correctamente.'
-      correctly_updated: 'Movimiento actualizado correctamente.'
-      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
-      empty_index:
-        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
       new: 'Nuevo movimiento'

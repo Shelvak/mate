@@ -8,6 +8,6 @@ Fabricator(:movement) do
   deposited_in { Faker::Lorem.sentence }
   devoted_at   { Time.zone.today }
   code_id      { rand(99) }
-  bank_id      { rand(99) }
+  bank_id      { Fabricate(:bank).id }
   client_id    { rand(99) }
 end

@@ -15,7 +15,7 @@
   </p>
   <p>
     <strong><%= Advance.human_attribute_name 'state' %></strong>:
-    <%= @advance.state %>
+    <%= @advance.state ? 'Salida' : 'Entrada' %>
   </p>
   
 </div>

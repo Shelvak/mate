@@ -20,7 +20,7 @@
               <td><%= l advance.charged_at, format: :long %></td>
               <td><%= advance.detail %></td>
               <td><%= number_to_currency advance.amount %></td>
-              <td><%= advance.state %></td>
+              <td><%= advance.state ? 'Salida' : 'Entrada' %></td>
               <td><%= link_to_show advance %></td>
               <td><%= link_to_edit edit_advance_path(advance) if can? :update, advance %></td>
               <td><%= link_to_destroy advance if can? :destroy, advance %></td>
