@@ -1,0 +1,29 @@
+<div class="readonly-data">
+  <h2><%= @workplace %></h2>
+
+  <p>
+    <strong><%= Workplace.human_attribute_name 'address' %></strong>:
+    <%= @workplace.address %>
+  </p>
+  <p>
+    <strong><%= Workplace.human_attribute_name 'city' %></strong>:
+    <%= @workplace.city %>
+  </p>
+  <p>
+    <strong><%= Workplace.human_attribute_name 'state' %></strong>:
+    <%= @workplace.state %>
+  </p>
+  <p>
+    <strong><%= Workplace.human_attribute_name 'country' %></strong>:
+    <%= @workplace.country %>
+  </p>
+  <p>
+    <strong><%= Workplace.human_attribute_name 'client_id' %></strong>:
+    <%= @workplace.client_id %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_workplace_path(@workplace) if can? :update, @workplace %> |
+  <%= link_to t('label.list'), workplaces_path %>
+</div>

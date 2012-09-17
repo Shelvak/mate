@@ -1,4 +1,6 @@
 Mate::Application.routes.draw do
+  resources :workplaces
+
   devise_for :users
   
   resources :users do

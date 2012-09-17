@@ -7,11 +7,20 @@
     
   activerecord:
     models:
+      workplace:
+        one: 'Lugar de trabajo'
+        other: 'Lugares de trabajo'
       user:
         one: 'Usuario'
         other: 'Usuarios'
       
     attributes:
+      workplace:
+        address: 'Dirección'
+        city: 'Ciudad'
+        country: 'País'
+        state: 'Provincia'
+        client_id: 'Cliente'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -22,7 +31,8 @@
           one: 'Perfil'
           other: 'Perfiles'
         remember_me: 'Recordarme'
-        
+
+            
   errors:
     title: 'Error'
     access_denied: 'No tiene permisos para acceder al contenido'
@@ -48,6 +58,18 @@
     confirmation: '¿Está seguro?'
     
   view:
+    workplaces:
+      index_title: 'Listado de lugares de trabajo'
+      show_title: 'Detalle de lugar de trabajo'
+      new_title: 'Nuevo lugar de trabajo'
+      edit_title: 'Modificar lugar de trabajo'
+      correctly_created: 'Lugar de trabajo agregado correctamente.'
+      correctly_updated: 'Lugar de trabajo actualizado correctamente.'
+      stale_object_error: 'El lugar de trabajo no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún lugar de trabajo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo lugar de trabajo</span>'
+      new: 'Nuevo lugar de trabajo'
+      edit: 'Modificar lugar de trabajo'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'

@@ -1,0 +1,44 @@
+<% if @workplaces.empty? %>
+  <%= render 'shared/empty_index' %>
+<% else %>
+  <div class="row">
+    <div class="span12">
+      <table class="table resource-list">
+        <thead>
+          <tr>
+            <th><%= Workplace.human_attribute_name 'address' %></th>
+            <th><%= Workplace.human_attribute_name 'city' %></th>
+            <th><%= Workplace.human_attribute_name 'state' %></th>
+            <th><%= Workplace.human_attribute_name 'country' %></th>
+            <th><%= Workplace.human_attribute_name 'client_id' %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @workplaces.each do |workplace| %>
+            <tr>
+              <td><%= workplace.address %></td>
+              <td><%= workplace.city %></td>
+              <td><%= workplace.state %></td>
+              <td><%= workplace.country %></td>
+              <td><%= workplace.client_id %></td>
+              <td><%= link_to_show workplace %></td>
+              <td><%= link_to_edit edit_workplace_path(workplace) if can? :update, workplace %></td>
+              <td><%= link_to_destroy workplace if can? :destroy, workplace %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%= pagination_links(@workplaces) %>
+<% end %>
+
+<div class="form-actions">
+  <%= link_to(
+    t('view.workplaces.new', default: :'label.new'),
+    new_workplace_path, class: 'btn btn-primary'
+  ) if can? :create, Workplace %>
+</div>
