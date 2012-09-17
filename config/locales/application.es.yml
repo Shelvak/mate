@@ -7,11 +7,17 @@
     
   activerecord:
     models:
+      code:
+        one: 'Código'
+        other: 'Codigos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
       
     attributes:
+      code:
+        detail: 'Detalle'
+        number: 'Número' 
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -54,6 +60,18 @@
       empty_search:
         title:
           html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
+    codes:
+      index_title: 'Listado de códigos'
+      show_title: 'Detalle de código'
+      new_title: 'Nuevo código'
+      edit_title: 'Modificar código'
+      correctly_created: 'Código agregado correctamente.'
+      correctly_updated: 'Código actualizado correctamente.'
+      stale_object_error: 'El código no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún código hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo código</span>'
+      new: 'Nuevo Código'
+      edit: 'Modificar Código'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
