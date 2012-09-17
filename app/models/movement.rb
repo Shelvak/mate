@@ -4,7 +4,7 @@ class Movement < ActiveRecord::Base
   belongs_to :bank
 
   attr_accessible :amount, :bank_id, :charged_at, :client_id, :code_id, :comment, :deposited_in, 
-    :devoted, :devoted_at, :mov_number, :total_amount
+    :devoted, :devoted_at, :mov_number, :total_amount, :auto_bank_name
 
   attr_accessor :auto_bank_name
 
