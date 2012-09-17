@@ -6,3 +6,6 @@
 /log/
 /public/assets/
 /tmp/
+.viminfo
+/.mozilla/
+/.vim/

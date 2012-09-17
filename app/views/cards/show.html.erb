@@ -1,0 +1,21 @@
+<div class="readonly-data">
+  <h2><%= @card %></h2>
+
+  <p>
+    <strong><%= Card.human_attribute_name 'name' %></strong>:
+    <%= @card.name %>
+  </p>
+  <p>
+    <strong><%= Card.human_attribute_name 'address' %></strong>:
+    <%= @card.address %>
+  </p>
+  <p>
+    <strong><%= Card.human_attribute_name 'website' %></strong>:
+    <%= @card.website %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_card_path(@card) if can? :update, @card %> |
+  <%= link_to t('label.list'), cards_path %>
+</div>

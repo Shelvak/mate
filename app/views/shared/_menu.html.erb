@@ -4,22 +4,25 @@
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="iconic">&#xe055;</span>
       </a>
-      
+
       <%= link_to t('app_name'), root_path, class: 'brand' %>
-      
+
       <% if user_signed_in? %>
         <div class="nav-collapse">
           <ul class="nav">
             <%= show_menu_link(
               name: 'users', controllers: 'users', path: users_path
             ) if can?(:read, User) %>
-          </ul>
-          <%= render partial: 'shared/nav_search' %>
-          <ul class="nav pull-right">
-            <li>
-              <%= link_to(
-                current_user.email, edit_profile_user_path(current_user),
-                'title' => t('view.users.edit_profile'),
+          <%= show_menu_link(
+            name: 'cards', controllers: 'cards', path: cards_path
+          ) if can?(:read, Card) %>
+      </ul>
+      <%= render partial: 'shared/nav_search' %>
+      <ul class="nav pull-right">
+        <li>
+        <%= link_to(
+          current_user.email, edit_profile_user_path(current_user),
+          'title' => t('view.users.edit_profile'),
                 'data-show-tooltip' => true, 'data-placement' => 'bottom'
               ) %>
             </li>

@@ -7,11 +7,18 @@
     
   activerecord:
     models:
+      card:
+        one: 'Tarjeta'
+        other: 'Tarjetas'
       user:
         one: 'Usuario'
         other: 'Usuarios'
       
     attributes:
+      card:
+        name: 'Nombre'
+        address: 'Direccion'
+        website: 'Sitio web'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -22,6 +29,8 @@
           one: 'Perfil'
           other: 'Perfiles'
         remember_me: 'Recordarme'
+    
+      
         
   errors:
     title: 'Error'
@@ -48,6 +57,18 @@
     confirmation: '¿Está seguro?'
     
   view:
+    cards:
+      index_title: 'Listado de tarjetas'
+      show_title: 'Detalle de tarjeta'
+      new_title: 'Nueva tarjeta'
+      edit_title: 'Modificar tarjeta'
+      correctly_created: 'Tarjeta agregada correctamente.'
+      correctly_updated: 'Tarjeta actualizada correctamente.'
+      stale_object_error: 'La tarjeta no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva tarjeta</span>'
+      new: 'Nueva tarjeta'
+      edit: 'Modificar tarjeta'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'
