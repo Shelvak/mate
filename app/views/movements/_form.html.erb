@@ -5,14 +5,23 @@
     <%= f.input :code_id %>
     <%= f.input :charged_at %>
     <%= f.input :mov_number %>
-    <%= f.input :bank_id %>
     <%= f.input :amount %>
     <%= f.input :total_amount %>
-    <%= f.input :client_id %>
     <%= f.input :comment %>
     <%= f.input :devoted %>
     <%= f.input :deposited_in %>
     <%= f.input :devoted_at %>
+    <%= f.input :client_id %>
+    <%= f.label :bank_id %>
+    <%= f.input :auto_bank_name, label: false, input_html: {
+      value: @movement.bank_id, class: 'autocomplete-field',
+      data: {
+        'autocomplete-id-target' => '#movement_bank_id',
+        'autocomplete-url' => autocomplete_for_bank_name_movements_path(format: :json)
+      }
+    }  %>
+    <%= f.input :bank_id, as: :hidden, 
+      input_html: { class: 'autocomplete-id' } %>
   </div>
 
   <div class="form-actions">

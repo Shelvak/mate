@@ -16,9 +16,10 @@
 //= require jquery.pjax
 //= require jquery/jquery.ui.datepicker-es
 //= require twitter/bootstrap
+//= require autocomplete
 //= require common
 //= require pjax
 //= require date_pickers
 //= require mobile
-//= require users
 //= require movements
+//= require users

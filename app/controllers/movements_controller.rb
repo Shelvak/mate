@@ -1,4 +1,8 @@
 class MovementsController < ApplicationController
+  before_filter :authenticate_user!
+
+  check_authorization
+  load_and_authorize_resource
   
   # GET /movements
   # GET /movements.json
@@ -87,6 +91,14 @@ class MovementsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to movements_url }
       format.json { head :ok }
+    end
+  end
+
+  def autocomplete_for_bank_name
+    banks = Bank.filtered_list(params[:q]).order('name DESC').limit(10)
+    
+    respond_to do |format|
+      format.json { render json: banks }
     end
   end
 end

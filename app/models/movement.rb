@@ -6,6 +6,8 @@ class Movement < ActiveRecord::Base
   attr_accessible :amount, :bank_id, :charged_at, :client_id, :code_id, :comment, :deposited_in, 
     :devoted, :devoted_at, :mov_number, :total_amount
 
+  attr_accessor :auto_bank_name
+
   validates :amount, :bank_id, :charged_at, :client_id, :code_id, :mov_number,
     presence: true
 

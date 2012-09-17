@@ -64,4 +64,22 @@ class MovementsControllerTest < ActionController::TestCase
 
     assert_redirected_to movements_url
   end
+
+  test 'should get autocomplete bank list' do
+    bank = Fabricate(:bank)
+    get :autocomplete_for_bank_name, format: :json, q: bank.name
+    assert_response :success
+        
+    banks = ActiveSupport::JSON.decode(@response.body)
+
+    assert_equal 1, banks.size
+    assert banks.all? { |d| d['label'].match /#{bank.name}/i }
+    
+    get :autocomplete_for_bank_name, format: :json, q: 'pxsazt'
+    assert_response :success
+        
+    banks = ActiveSupport::JSON.decode(@response.body)
+
+    assert banks.empty? 
+  end
 end
