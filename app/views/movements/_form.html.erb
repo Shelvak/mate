@@ -1,6 +1,7 @@
 <%= simple_form_for(@movement) do |f| %>
   <%= f.error_notification %>
-  <% if @movement.errors[:bank_id].present? %>
+
+  <% if @movement.errors.present? %>
     <% change_movement_autocomplete_field_errors(@movement) %>
   <% end %>
 
@@ -19,6 +20,7 @@
         <%= f.input :total_amount %>
       </div>
     </div>
+
     <div class="row-fluid">
       <div class="span4">
         <%= f.input :devoted, input_html: { class: 'span9' } %>
@@ -43,7 +45,7 @@
       <div class="span4">
         <%= f.label :bank_id %>
         <%= f.input :auto_bank_name, label: false, input_html: {
-          value: @movement.bank_id, class: 'span9 autocomplete-field',
+          value: @movement.bank, class: 'span9 autocomplete-field',
           data: {
             'autocomplete-id-target' => '#movement_bank_id',
             'autocomplete-url' => autocomplete_for_bank_name_movements_path(format: :json)

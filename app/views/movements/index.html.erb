@@ -25,27 +25,20 @@
           <% @movements.each do |movement| %>
             <tr>
               <td><%= movement.code_id %></td>
-              <td><%= l movement.charged_at, format: :long %></td>
+              <td><%= l movement.charged_at %></td>
               <td>
                 <%= link_to(
-                  movement.mov_number, movement_path(movement.mov_number)
+                  movement.mov_number, movement_path(movement)
                 ) %>
               </td>
               <td><%= link_to movement.bank, movement.bank %></td>
               <td><%= number_to_currency movement.amount %></td>
               <td><%= number_to_currency movement.total_amount %></td>
               <td><%= movement.client_id %></td>
-              <td><%= truncate movement.comment, length: 30 %></td>
+              <td><%= truncate movement.comment, length: 20 %></td>
               <td><%= movement.devoted %></td>
               <td><%= movement.deposited_in %></td>
-              <td><%= l movement.devoted_at, format: :long %></td>
-              <td><%= link_to_show movement %></td>
-              <td>
-                <%= link_to_edit(
-                  edit_movement_path(movement)
-                ) if can? :update, movement %>
-              </td>
-              <td><%= link_to_destroy movement if can? :destroy, movement %></td>
+              <td><%= l movement.devoted_at %></td>
             </tr>
           <% end %>
         </tbody>

@@ -60,4 +60,11 @@ class MovementTest < ActiveSupport::TestCase
     assert_equal [error_message_from_model(@movement, :mov_number, :taken)],
       @movement.errors[:mov_number]
   end
+
+  test 'auto attr accessor names' do
+    attrs = @movement.auto_attr_accessor_names
+
+    assert attrs.size > 0
+    assert_equal ['bank'], attrs
+  end
 end

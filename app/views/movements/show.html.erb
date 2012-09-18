@@ -1,5 +1,5 @@
 <div class="readonly-data">
-  <h2><%= t('view.movements.show_title') %></h2>
+  <h2><%= t('view.movements.show', movement: @movement) %></h2>
 
   <p>
     <strong><%= Movement.human_attribute_name 'code_id' %></strong>:
@@ -7,7 +7,7 @@
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'charged_at' %></strong>:
-    <%= @movement.charged_at %>
+    <%= l @movement.charged_at, format: :long %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'mov_number' %></strong>:
@@ -15,7 +15,7 @@
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'bank_id' %></strong>:
-    <%= @movement.bank %>
+    <%= link_to @movement.bank, @movement.bank %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'amount' %></strong>:
@@ -48,6 +48,8 @@
   
 </div>
 <div class="form-actions">
-  <%= link_to t('label.edit'), edit_movement_path(@movement) if can? :update, @movement %> |
-  <%= link_to t('label.list'), movements_path %>
+  <%= link_to t('label.edit'), 
+    edit_movement_path(@movement) if can? :update, @movement %> |
+  <%= link_to t('label.delete'), @movement if can? :destroy, @movement %>
+  <div class="pull-right"><%= link_to t('label.list'), movements_path %></div>
 </div>

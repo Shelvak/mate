@@ -8,7 +8,8 @@ class MovementsController < ApplicationController
   # GET /movements.json
   def index
     @title = t('view.movements.index_title')
-    @movements = Movement.page(params[:page])
+    @searchable = true
+    @movements = Movement.filtered_list(params[:q]).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
