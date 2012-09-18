@@ -100,11 +100,12 @@
       edit_title: 'Modificar banco'
       correctly_created: 'Banco agregado correctamente.'
       correctly_updated: 'Banco actualizado correctamente.'
+      correctly_deleted: 'Banco eliminado correctamente.'
       stale_object_error: 'El banco no pudo ser actualizado, intente nuevamente.'
       empty_index:
         html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
-      new: 'Nuevo banco'
-      edit: 'Modificar banco'
+      new: 'Nuevo Banco'
+      edit: 'Modificar Banco'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'

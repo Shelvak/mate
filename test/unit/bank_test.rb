@@ -7,7 +7,7 @@ class BankTest < ActiveSupport::TestCase
   end
 
   test 'create' do
-    assert_difference ['Bank.count', 'Version.count'] do
+    assert_difference 'Bank.count' do
       @bank = Bank.create(Fabricate.attributes_for(:bank))
     end
   end

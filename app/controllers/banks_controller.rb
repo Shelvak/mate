@@ -90,7 +90,7 @@ class BanksController < ApplicationController
     @bank.destroy
 
     respond_to do |format|
-      format.html { redirect_to banks_url }
+      format.html { redirect_to banks_url, notice: t('view.banks.correctly_deleted') }
       format.json { head :ok }
     end
   end

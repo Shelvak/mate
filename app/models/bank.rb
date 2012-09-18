@@ -1,5 +1,5 @@
 class Bank < ActiveRecord::Base
-  has_paper_trail
+  has_paper_trail on: [:update, :destroy]
 
   has_magick_columns name: :string
 
