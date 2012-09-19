@@ -68,8 +68,8 @@
       stale_object_error: 'El lugar de trabajo no pudo ser actualizado, intente nuevamente.'
       empty_index:
         html: 'No se ha creado ningún lugar de trabajo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo lugar de trabajo</span>'
-      new: 'Nuevo lugar de trabajo'
-      edit: 'Modificar lugar de trabajo'
+      new: 'Nuevo Lugar de trabajo'
+      edit: 'Modificar Lugar de trabajo'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'

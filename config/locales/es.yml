@@ -176,6 +176,8 @@
       create: 'Crear %{model}'
       update: 'Actualizar %{model}'
       submit: 'Guardar %{model}'
+      new: 'Nuevo %{model}'
+
 
   errors:
     format: "%{attribute} %{message}"

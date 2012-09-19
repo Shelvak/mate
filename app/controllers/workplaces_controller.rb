@@ -1,5 +1,5 @@
 class WorkplacesController < ApplicationController
-  
+
   # GET /workplaces
   # GET /workplaces.json
   def index
@@ -85,7 +85,7 @@ class WorkplacesController < ApplicationController
     @workplace.destroy
 
     respond_to do |format|
-      format.html { redirect_to workplaces_url }
+      format.html { redirect_to workplaces_url, notice: I18n.t('view.workplaces.correctly_deleted') }
       format.json { head :ok }
     end
   end
