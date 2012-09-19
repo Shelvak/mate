@@ -50,20 +50,25 @@ class ActionDispatch::IntegrationTest
     
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: '123456'
-    
+
     find('.btn.btn-primary').click
-    
+
     assert_equal root_path, current_path
-    
+
     assert_page_has_no_errors!
     assert page.has_css?('.alert')
-    
+
     within '.alert' do
       assert page.has_content?(I18n.t('devise.sessions.signed_in'))
     end
   end
-  
+
   def assert_page_has_no_errors!
     assert page.has_no_css?('#unexpected_error')
+  end
+
+  def remove_data_confirm_attr
+    remove_confirm = "$('a[data-confirm]').data('confirm', '').removeAttr('data-confirm')"
+    page.execute_script(remove_confirm)
   end
 end
