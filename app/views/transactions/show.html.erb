@@ -1,0 +1,33 @@
+<div class="readonly-data">
+  <h2><%= @transaction %></h2>
+
+  <p>
+    <strong><%= Transaction.human_attribute_name 'charged_at' %></strong>:
+    <%= l @transaction.charged_at, format: :long %>
+  </p>
+  <p>
+    <strong><%= Transaction.human_attribute_name 'amount' %></strong>:
+    <%= number_to_currency @transaction.amount %>
+  </p>
+  <p>
+    <strong><%= Transaction.human_attribute_name 'batch' %></strong>:
+    <%= @transaction.batch %>
+  </p>
+  <p>
+    <strong><%= Transaction.human_attribute_name 'expiration' %></strong>:
+    <%= l @transaction.expiration, format: :long %>
+  </p>
+  <p>
+    <strong><%= Transaction.human_attribute_name 'place_id' %></strong>:
+    <%= @transaction.place_id %>
+  </p>
+  <p>
+    <strong><%= Transaction.human_attribute_name 'card_id' %></strong>:
+    <%= @transaction.card_id %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_transaction_path(@transaction) if can? :update, @transaction %> |
+  <%= link_to t('label.list'), transactions_path %>
+</div>

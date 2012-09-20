@@ -7,6 +7,7 @@
     
   activerecord:
     models:
+<<<<<<< HEAD
       advance:
         one: 'Anticipo'
         other: 'Anticipos'
@@ -25,6 +26,11 @@
       card:
         one: 'Tarjeta'
         other: 'Tarjetas'
+=======
+      transaction:
+        one: 'Transacción'
+        other: 'Transacciones'
+>>>>>>> origin/trans-mauro
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -33,6 +39,7 @@
         other: 'Lugares de trabajo'
       
     attributes:
+<<<<<<< HEAD
       advance:
         charged_at: 'Fecha carga'
         amount: 'Importe'
@@ -67,6 +74,15 @@
         name: 'Nombre'
         address: 'Direccion'
         website: 'Sitio web'
+=======
+      transaction:
+        charged_at: 'Fecha de Transaccion'
+        amount: 'Importe'
+        batch: 'Lote'
+        expiration: 'Vencimiento'
+        place_id: 'Establecimiento'
+        card_id: 'Tarjeta'
+>>>>>>> origin/trans-mauro
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -132,6 +148,7 @@
       empty_search:
         title:
           html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
+<<<<<<< HEAD
     advances: 
       index_title: 'Listado de anticipos'
       show_title: 'Detalle de anticipo'
@@ -193,6 +210,21 @@
         html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
       new: 'Nuevo movimiento'
       show: 'Detalle de movimiento %{movement}' 
+=======
+    transactions:
+      index_title: 'Listado de Transacciones'
+      show_title: 'Detalle de transacción'
+      new_title: 'Nueva transaccción'
+      edit_title: 'Modificar transacción'
+      correctly_created: 'Transacción agregada correctamente.'
+      correctly_updated: 'Transacción actualizada correctamente.'
+      correctly_deleted: 'Transacción eliminada correctamente.'
+      stale_object_error: 'La transacción no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningúna transacción hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva transaccion</span>'
+      new: 'Nueva Transacción'
+      edit: 'Modificar Transacción'
+>>>>>>> origin/trans-mauro
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'

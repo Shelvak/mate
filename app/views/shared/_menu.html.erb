@@ -45,6 +45,12 @@
                 path: workplaces_path
               ) if can?(:read, Workplace) %>
             </li>
+            <li>
+              <%= show_menu_link(
+                name: 'transactions', controllers: 'transactions',
+                path: transactions_path
+              ) if can?(:read, Transaction) %>
+            </li>
           </ul>
           <%= render partial: 'shared/nav_search' %>
           <ul class="nav pull-right">
