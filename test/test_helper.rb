@@ -66,4 +66,9 @@ class ActionDispatch::IntegrationTest
   def assert_page_has_no_errors!
     assert page.has_no_css?('#unexpected_error')
   end
+
+  def remove_data_confirm_attr
+    remove_confirm = "$('a[data-confirm]').data('confirm', '').removeAttr('data-confirm')"
+    page.execute_script(remove_confirm)
+  end   
 end
