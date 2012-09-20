@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120917072553) do
+ActiveRecord::Schema.define(:version => 20120917021732) do
 
   create_table "advances", :force => true do |t|
     t.date     "charged_at",                                :null => false
@@ -30,6 +30,28 @@ ActiveRecord::Schema.define(:version => 20120917072553) do
     t.datetime "updated_at",                                                 :null => false
   end
 
+  create_table "cards", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "address"
+    t.string   "website"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "phone"
+    t.string   "email",      :null => false
+    t.string   "website"
+    t.string   "ident",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
+  add_index "clients", ["ident"], :name => "index_clients_on_ident", :unique => true
+  add_index "clients", ["name"], :name => "index_clients_on_name", :unique => true
+  
   create_table "codes", :force => true do |t|
     t.integer  "number",     :null => false
     t.text     "detail",     :null => false
@@ -53,20 +75,6 @@ ActiveRecord::Schema.define(:version => 20120917072553) do
     t.datetime "updated_at",                                  :null => false
   end
 
-  create_table "clients", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "phone"
-    t.string   "email",      :null => false
-    t.string   "website"
-    t.string   "ident",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
-  add_index "clients", ["ident"], :name => "index_clients_on_ident", :unique => true
-  add_index "clients", ["name"], :name => "index_clients_on_name", :unique => true
-  
   create_table "users", :force => true do |t|
     t.string   "name",                                   :null => false
     t.string   "lastname"

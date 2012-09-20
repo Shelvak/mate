@@ -20,6 +20,11 @@
             ) if can?(:read, Bank) %>
             </li>
             <li>
+              <%= show_menu_link(
+                name: 'cards', controllers: 'cards', path: cards_path
+              ) if can?(:read, Card) %>
+            </li>
+            <li>
             <%= show_menu_link(
               name: 'clients', controllers: 'clients', path: clients_path
             ) if can?(:read, Client) %>
