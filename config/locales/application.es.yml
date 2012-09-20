@@ -7,39 +7,35 @@
     
   activerecord:
     models:
-<<<<<<< HEAD
       advance:
         one: 'Anticipo'
         other: 'Anticipos'
       bank:
         one: 'Banco'
         other: 'Bancos'
-      client:
-        one: 'Cliente'
-        other: 'Clientes'
-      movement:
-        one: 'Movimiento'
-        other: 'Movimientos'
-      code:
-        one: 'Código'
-        other: 'Códigos'
       card:
         one: 'Tarjeta'
         other: 'Tarjetas'
-=======
-      transaction:
-        one: 'Transacción'
-        other: 'Transacciones'
->>>>>>> origin/trans-mauro
+      client:
+        one: 'Cliente'
+        other: 'Clientes'
+      code:
+        one: 'Código'
+        other: 'Códigos'
+      movement:
+        one: 'Movimiento'
+        other: 'Movimientos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
+      transaction:
+        one: 'Transacción'
+        other: 'Transacciones'
       workplace:
         one: 'Lugar de trabajo'
         other: 'Lugares de trabajo'
       
     attributes:
-<<<<<<< HEAD
       advance:
         charged_at: 'Fecha carga'
         amount: 'Importe'
@@ -49,12 +45,19 @@
         name: 'Nombre'
         website: 'Sitio web'
         amount: 'Saldo'
+      card:
+        name: 'Nombre'
+        address: 'Direccion'
+        website: 'Sitio web'
       client:
         name: 'Nombre'
         email: 'Correo'
         ident: 'Identificación'
         website: 'Sitio web'
         phone: 'Teléfono'
+      code:
+        detail: 'Detalle'
+        number: 'Número' 
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Número de movimiento'
@@ -67,22 +70,6 @@
         bank_id: 'Banco sucursal'
         client_id: 'Recibido a'
         code_id: 'Código'
-      code:
-        detail: 'Detalle'
-        number: 'Número' 
-      card:
-        name: 'Nombre'
-        address: 'Direccion'
-        website: 'Sitio web'
-=======
-      transaction:
-        charged_at: 'Fecha de Transaccion'
-        amount: 'Importe'
-        batch: 'Lote'
-        expiration: 'Vencimiento'
-        place_id: 'Establecimiento'
-        card_id: 'Tarjeta'
->>>>>>> origin/trans-mauro
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -92,12 +79,19 @@
         roles:
           one: 'Perfil'
           other: 'Perfiles'
+        remember_me: 'Recordarme'
+      transaction:
+        charged_at: 'Fecha de Transaccion'
+        amount: 'Importe'
+        batch: 'Lote'
+        expiration: 'Vencimiento'
+        place_id: 'Establecimiento'
+        card_id: 'Tarjeta'
       workplace:
         address: 'Dirección'
         city: 'Ciudad'
         country: 'País'
         state: 'Provincia'
-        remember_me: 'Recordarme'
 
   errors:
     title: 'Error'
@@ -120,35 +114,25 @@
       logout: 'Salir de la aplicación'
     advances: 'Adelantos'  
     banks: 'Bancos'
+    cards: 'Tarjetas'
     clients: 'Clientes'
     codes: 'Códigos'
+    menu: 'Menu'
     movements: 'Movimientos'
     users: 'Usuarios'
+    transactions: 'Transacciones'
     workplaces: 'Lugar de trabajo'
     
   messages:
     confirmation: '¿Está seguro?'
     
   view:
-    cards:
-      index_title: 'Listado de tarjetas'
-      show_title: 'Detalle de tarjeta'
-      new_title: 'Nueva tarjeta'
-      edit_title: 'Modificar tarjeta'
-      correctly_created: 'Tarjeta agregada correctamente.'
-      correctly_updated: 'Tarjeta actualizada correctamente.'
-      stale_object_error: 'La tarjeta no pudo ser actualizada, intente nuevamente.'
-      empty_index:
-        html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva tarjeta</span>'
-      new: 'Nueva tarjeta'
-      edit: 'Modificar tarjeta'
     generic:
       empty_index:
         html: 'No hay ningún elemento por el momento'
       empty_search:
         title:
           html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
-<<<<<<< HEAD
     advances: 
       index_title: 'Listado de anticipos'
       show_title: 'Detalle de anticipo'
@@ -173,6 +157,18 @@
         html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
       new: 'Nuevo Banco'
       edit: 'Modificar Banco'
+    cards:
+      index_title: 'Listado de tarjetas'
+      show_title: 'Detalle de tarjeta'
+      new_title: 'Nueva tarjeta'
+      edit_title: 'Modificar tarjeta'
+      correctly_created: 'Tarjeta agregada correctamente.'
+      correctly_updated: 'Tarjeta actualizada correctamente.'
+      stale_object_error: 'La tarjeta no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva tarjeta</span>'
+      new: 'Nueva tarjeta'
+      edit: 'Modificar tarjeta'
     clients:
       index_title: 'Listado de clientes'
       show_title: 'Detalle de cliente'
@@ -210,21 +206,6 @@
         html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
       new: 'Nuevo movimiento'
       show: 'Detalle de movimiento %{movement}' 
-=======
-    transactions:
-      index_title: 'Listado de Transacciones'
-      show_title: 'Detalle de transacción'
-      new_title: 'Nueva transaccción'
-      edit_title: 'Modificar transacción'
-      correctly_created: 'Transacción agregada correctamente.'
-      correctly_updated: 'Transacción actualizada correctamente.'
-      correctly_deleted: 'Transacción eliminada correctamente.'
-      stale_object_error: 'La transacción no pudo ser actualizada, intente nuevamente.'
-      empty_index:
-        html: 'No se ha creado ningúna transacción hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva transaccion</span>'
-      new: 'Nueva Transacción'
-      edit: 'Modificar Transacción'
->>>>>>> origin/trans-mauro
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
@@ -243,6 +224,19 @@
       roles:
         admin: 'Administrador'
         regular: 'Normal'
+    transactions:
+      index_title: 'Listado de Transacciones'
+      show_title: 'Detalle de transacción'
+      new_title: 'Nueva transaccción'
+      edit_title: 'Modificar transacción'
+      correctly_created: 'Transacción agregada correctamente.'
+      correctly_updated: 'Transacción actualizada correctamente.'
+      correctly_deleted: 'Transacción eliminada correctamente.'
+      stale_object_error: 'La transacción no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningúna transacción hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva transaccion</span>'
+      new: 'Nueva Transacción'
+      edit: 'Modificar Transacción'
     workplaces:
       index_title: 'Listado de lugares de trabajo'
       show_title: 'Detalle de lugar de trabajo'

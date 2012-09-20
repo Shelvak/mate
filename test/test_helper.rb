@@ -58,9 +58,7 @@ class ActionDispatch::IntegrationTest
     assert_page_has_no_errors!
     assert page.has_css?('.alert')
 
-    within '.alert' do
-      assert page.has_content?(I18n.t('devise.sessions.signed_in'))
-    end
+    assert page.has_css?('.alert', I18n.t('devise.sessions.signed_in'))
   end
 
   def assert_page_has_no_errors!
