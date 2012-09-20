@@ -19,6 +19,9 @@
       movement:
         one: 'Movimiento'
         other: 'Movimientos'
+      code:
+        one: 'Código'
+        other: 'Códigos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -54,6 +57,9 @@
         bank_id: 'Banco sucursal'
         client_id: 'Recibido a'
         code_id: 'Código'
+      code:
+        detail: 'Detalle'
+        number: 'Número' 
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -89,9 +95,10 @@
   menu:
     actions:
       logout: 'Salir de la aplicación'
-    advances: 'Adelantos'
+    advances: 'Adelantos'  
     banks: 'Bancos'
     clients: 'Clientes'
+    codes: 'Códigos'
     movements: 'Movimientos'
     users: 'Usuarios'
     workplaces: 'Lugar de trabajo'
@@ -143,6 +150,18 @@
         html: 'No se ha creado ningún cliente hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo cliente</span>'
       new: 'Nuevo Cliente'
       show_title_for: 'Detalle de %{client}'
+    codes:
+      index_title: 'Listado de códigos'
+      show_title: 'Detalle de código'
+      new_title: 'Nuevo código'
+      edit_title: 'Modificar código'
+      correctly_created: 'Código agregado correctamente.'
+      correctly_updated: 'Código actualizado correctamente.'
+      stale_object_error: 'El código no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún código hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo código</span>'
+      new: 'Nuevo Código'
+      edit: 'Modificar Código'
     movements:
       index_title: 'Listado de movimientos'
       show_title: 'Detalle de movimiento'

@@ -1,5 +1,5 @@
 Mate::Application.routes.draw do
-  resources :advances, :banks, :clients, :workplaces
+  resources :advances, :banks, :clients, :codes, :workplaces
 
   resources :movements do
     get :autocomplete_for_bank_name, on: :collection
