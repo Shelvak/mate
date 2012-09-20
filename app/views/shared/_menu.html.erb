@@ -4,33 +4,42 @@
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="iconic">&#xe055;</span>
       </a>
-      
+
       <%= link_to t('app_name'), root_path, class: 'brand' %>
       <% if user_signed_in? %>
         <div class="nav-collapse">
           <ul class="nav">
-            <%= show_menu_link(
-              name: 'users', controllers: 'users', path: users_path
-            ) if can?(:read, User) %>
-                    
-          <%= show_menu_link(
-              name: 'movements', controllers: 'movements', path: movements_path
-          ) if can?(:read, Movement) %>
-          </ul>
-          <ul class="nav">
+            <li>
             <%= show_menu_link(
               name: 'advances', controllers: 'advances', path: advances_path
-            ) if can?(:read, User) %>
-          </ul>
-          <ul class="nav">
+            ) if can?(:read, Advance) %>
+            </li>
+            <li>
             <%= show_menu_link(
               name: 'banks', controllers: 'banks', path: banks_path
-            ) if can?(:read, User) %>
-          </ul>
-          <ul class="nav">
+            ) if can?(:read, Bank) %>
+            </li>
+            <li>
             <%= show_menu_link(
               name: 'clients', controllers: 'clients', path: clients_path
             ) if can?(:read, Client) %>
+            </li>
+            <li>
+            <%= show_menu_link(
+              name: 'movements', controllers: 'movements', path: movements_path
+            ) if can?(:read, Movement) %>
+            </li>
+            <li>
+            <%= show_menu_link(
+              name: 'users', controllers: 'users', path: users_path
+            ) if can?(:read, User) %>
+            </li>
+            <li>
+              <%= show_menu_link(
+                name: 'workplaces', controllers: 'workplaces',
+                path: workplaces_path
+              ) if can?(:read, Workplace) %>
+            </li>
           </ul>
           <%= render partial: 'shared/nav_search' %>
           <ul class="nav pull-right">

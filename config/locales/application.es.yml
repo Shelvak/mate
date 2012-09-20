@@ -16,12 +16,15 @@
       client:
         one: 'Cliente'
         other: 'Clientes'
-      user:
-        one: 'Usuario'
-        other: 'Usuarios'
       movement:
         one: 'Movimiento'
         other: 'Movimientos'
+      user:
+        one: 'Usuario'
+        other: 'Usuarios'
+      workplace:
+        one: 'Lugar de trabajo'
+        other: 'Lugares de trabajo'
       
     attributes:
       advance:
@@ -39,17 +42,6 @@
         ident: 'Identificación'
         website: 'Sitio web'
         phone: 'Teléfono'
-      user:
-        name: 'Nombre'
-        lastname: 'Apellido'
-        email: 'Correo'
-        password: 'Contraseña'
-        password_confirmation: 'Confirmación'
-        roles:
-          one: 'Perfil'
-          other: 'Perfiles'
-        remember_me: 'Recordarme'
-      
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Número de movimiento'
@@ -62,7 +54,22 @@
         bank_id: 'Banco sucursal'
         client_id: 'Recibido a'
         code_id: 'Código'
-        
+      user:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        email: 'Correo'
+        password: 'Contraseña'
+        password_confirmation: 'Confirmación'
+        roles:
+          one: 'Perfil'
+          other: 'Perfiles'
+      workplace:
+        address: 'Dirección'
+        city: 'Ciudad'
+        country: 'País'
+        state: 'Provincia'
+        remember_me: 'Recordarme'
+       
   errors:
     title: 'Error'
     access_denied: 'No tiene permisos para acceder al contenido'
@@ -84,13 +91,21 @@
       logout: 'Salir de la aplicación'
     advances: 'Adelantos'
     banks: 'Bancos'
-    users: 'Usuarios'
+    clients: 'Clientes'
     movements: 'Movimientos'
+    users: 'Usuarios'
+    workplaces: 'Lugar de trabajo'
     
   messages:
     confirmation: '¿Está seguro?'
     
   view:
+    generic:
+      empty_index:
+        html: 'No hay ningún elemento por el momento'
+      empty_search:
+        title:
+          html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
     advances: 
       index_title: 'Listado de anticipos'
       show_title: 'Detalle de anticipo'
@@ -115,24 +130,6 @@
         html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
       new: 'Nuevo Banco'
       edit: 'Modificar Banco'
-    generic:
-      empty_index:
-        html: 'No hay ningún elemento por el momento'
-      empty_search:
-        title:
-          html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
-    movements:
-      index_title: 'Listado de movimientos'
-      show_title: 'Detalle de movimiento'
-      new_title: 'Nuevo movimiento'
-      edit_title: 'Modificar movimiento'
-      correctly_created: 'Movimiento agregado correctamente.'
-      correctly_updated: 'Movimiento actualizado correctamente.'
-      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
-      empty_index:
-        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
-      new: 'Nuevo movimiento'
-      show: 'Detalle de movimiento %{movement}' 
     clients:
       index_title: 'Listado de clientes'
       show_title: 'Detalle de cliente'
@@ -146,6 +143,18 @@
         html: 'No se ha creado ningún cliente hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo cliente</span>'
       new: 'Nuevo Cliente'
       show_title_for: 'Detalle de %{client}'
+    movements:
+      index_title: 'Listado de movimientos'
+      show_title: 'Detalle de movimiento'
+      new_title: 'Nuevo movimiento'
+      edit_title: 'Modificar movimiento'
+      correctly_created: 'Movimiento agregado correctamente.'
+      correctly_updated: 'Movimiento actualizado correctamente.'
+      stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
+      new: 'Nuevo movimiento'
+      show: 'Detalle de movimiento %{movement}' 
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
@@ -164,3 +173,15 @@
       roles:
         admin: 'Administrador'
         regular: 'Normal'
+    workplaces:
+      index_title: 'Listado de lugares de trabajo'
+      show_title: 'Detalle de lugar de trabajo'
+      new_title: 'Nuevo lugar de trabajo'
+      edit_title: 'Modificar lugar de trabajo'
+      correctly_created: 'Lugar de trabajo agregado correctamente.'
+      correctly_updated: 'Lugar de trabajo actualizado correctamente.'
+      stale_object_error: 'El lugar de trabajo no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún lugar de trabajo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo lugar de trabajo</span>'
+      new: 'Nuevo Lugar de trabajo'
+      edit: 'Modificar Lugar de trabajo'

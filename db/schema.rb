@@ -96,4 +96,14 @@ ActiveRecord::Schema.define(:version => 20120910223229) do
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
   add_index "versions", ["whodunnit"], :name => "index_versions_on_whodunnit"
 
+  create_table "workplaces", :force => true do |t|
+    t.string   "address",                             :null => false
+    t.string   "city"
+    t.string   "state",      :default => "Mendoza",   :null => false
+    t.string   "country",    :default => "Argentina", :null => false
+    t.integer  "client_id",                           :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
 end
