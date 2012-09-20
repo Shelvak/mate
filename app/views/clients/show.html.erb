@@ -1,0 +1,30 @@
+<div class="readonly-data">
+  <h2><%= t('view.clients.show_title_for', client: @client) %></h2>
+
+  <p>
+    <strong><%= Client.human_attribute_name 'name' %></strong>:
+    <%= @client.name %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'phone' %></strong>:
+    <%= @client.phone %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'email' %></strong>:
+    <%= mail_to @client.email %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'website' %></strong>:
+    <%= @client.website %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'ident' %></strong>:
+    <%= @client.ident %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), 
+    edit_client_path(@client) if can? :update, @client %> |
+  <%= link_to t('label.list'), clients_path %>
+</div>

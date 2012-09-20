@@ -27,6 +27,11 @@
               name: 'banks', controllers: 'banks', path: banks_path
             ) if can?(:read, User) %>
           </ul>
+          <ul class="nav">
+            <%= show_menu_link(
+              name: 'clients', controllers: 'clients', path: clients_path
+            ) if can?(:read, Client) %>
+          </ul>
           <%= render partial: 'shared/nav_search' %>
           <ul class="nav pull-right">
             <li>
