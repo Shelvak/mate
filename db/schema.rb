@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306131941) do
+ActiveRecord::Schema.define(:version => 20120917060836) do
+
+  create_table "advances", :force => true do |t|
+    t.date     "charged_at",                                :null => false
+    t.text     "detail",                                    :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
+    t.boolean  "state"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  create_table "banks", :force => true do |t|
+    t.string   "name",                                                       :null => false
+    t.string   "website"
+    t.decimal  "amount",     :precision => 15, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
+  end
+
+  create_table "movements", :force => true do |t|
+    t.date     "charged_at",                                  :null => false
+    t.string   "mov_number",                                  :null => false
+    t.decimal  "amount",       :precision => 15, :scale => 2, :null => false
+    t.decimal  "total_amount", :precision => 15, :scale => 2
+    t.text     "comment"
+    t.string   "devoted"
+    t.string   "deposited_in"
+    t.date     "devoted_at"
+    t.integer  "code_id",                                     :null => false
+    t.integer  "bank_id",                                     :null => false
+    t.integer  "client_id",                                   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.date     "charged_at",                                :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
+    t.integer  "batch"
+    t.date     "expiration",                                :null => false
+    t.integer  "place_id",                                  :null => false
+    t.integer  "card_id",                                   :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",                                   :null => false

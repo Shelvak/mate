@@ -7,11 +7,21 @@
     
   activerecord:
     models:
+      transaction:
+        one: 'Transacción'
+        other: 'Transacciones'
       user:
         one: 'Usuario'
         other: 'Usuarios'
       
     attributes:
+      transaction:
+        charged_at: 'Fecha de Transaccion'
+        amount: 'Importe'
+        batch: 'Lote'
+        expiration: 'Vencimiento'
+        place_id: 'Establecimiento'
+        card_id: 'Tarjeta'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -54,6 +64,19 @@
       empty_search:
         title:
           html: 'La búsqueda de <span class="label label-inverse">%{search}</span> no obtuvo ningún resultado.'
+    transactions:
+      index_title: 'Listado de Transacciones'
+      show_title: 'Detalle de transacción'
+      new_title: 'Nueva transaccción'
+      edit_title: 'Modificar transacción'
+      correctly_created: 'Transacción agregada correctamente.'
+      correctly_updated: 'Transacción actualizada correctamente.'
+      correctly_deleted: 'Transacción eliminada correctamente.'
+      stale_object_error: 'La transacción no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningúna transacción hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva transaccion</span>'
+      new: 'Nueva Transacción'
+      edit: 'Modificar Transacción'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
