@@ -77,5 +77,20 @@ class BanksControllerTest < ActionController::TestCase
 
     assert_redirected_to banks_url
   end
+
+  test 'should get filtered list' do
+    sign_in @user
+
+    Fabricate(:bank, name: 'in_filtered_index')
+   
+    get :index, q: 'filtered_index'
+    assert_response :success
+    assert_not_nil assigns(:banks)
+    assert_equal 1, assigns(:banks).size
+    assert assigns(:banks).all? { |u| u.to_s =~ /filtered_index/ }
+    assert_not_equal assigns(:banks).size, Bank.count
+    assert_select '#unexpected_error', false
+    assert_template 'banks/index'
+  end 
 end
 

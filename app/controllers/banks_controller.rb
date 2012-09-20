@@ -8,8 +8,8 @@ class BanksController < ApplicationController
   # GET /banks.json
   def index
     @title = t('view.banks.index_title')
-    @banks = Bank.filtered_list(params[:q]).page(params[:page])
     @searchable = true
+    @banks = Bank.filtered_list(params[:q]).page(params[:page])
     
     respond_to do |format|
       format.html # index.html.erb

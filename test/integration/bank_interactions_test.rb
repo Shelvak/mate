@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require 'test_helper'
 
 class BankInteractionsTest < ActionDispatch::IntegrationTest
@@ -32,7 +30,7 @@ class BankInteractionsTest < ActionDispatch::IntegrationTest
       click_button I18n.t('helpers.submit.create', model: Bank.model_name.human)
     end
 
-    bank = Bank.order('id DESC').first
+    bank = Bank.reorder('id DESC').first
     assert_page_has_no_errors!
     assert_equal bank_path(bank), current_path
   end
