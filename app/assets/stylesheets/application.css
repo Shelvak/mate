@@ -19,4 +19,11 @@
  *= require devise
  *= require users
  *= require movements
+ *= require banks
+ *= require advances
+ *= require cards
+ *= require clients
+ *= require codes
+ *= require places
+ *= require workplaces
 */

@@ -25,6 +25,9 @@
       movement:
         one: 'Movimiento'
         other: 'Movimientos'
+      place:
+        one: 'Lugar'
+        other: 'Lugares'
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -70,6 +73,8 @@
         bank_id: 'Banco sucursal'
         client_id: 'Recibido a'
         code_id: 'Código'
+      place:
+        name: 'Ubicación'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -119,6 +124,7 @@
     codes: 'Códigos'
     menu: 'Menu'
     movements: 'Movimientos'
+    places: 'Ubicaciones'
     users: 'Usuarios'
     transactions: 'Transacciones'
     workplaces: 'Lugar de trabajo'
@@ -206,6 +212,18 @@
         html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
       new: 'Nuevo movimiento'
       show: 'Detalle de movimiento %{movement}' 
+    places:
+      index_title: 'Listado de ubicación'
+      show_title: 'Detalle de ubicación'
+      new_title: 'Nueva ubicación'
+      edit_title: 'Modificar ubicación'
+      correctly_created: 'Ubicación agregada correctamente.'
+      correctly_updated: 'Ubicación actualizada correctamente.'
+      stale_object_error: 'La ubicación no pudo ser actualizada, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningúna ubicación hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva Ubicación</span>'
+      new: 'Nueva Ubicación'
+      edit: 'Modificar Ubicación'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'

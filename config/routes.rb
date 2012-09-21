@@ -1,4 +1,6 @@
 Mate::Application.routes.draw do
+  resources :places
+
   resources :advances, :banks, :cards, :clients, :codes,
     :transactions, :workplaces
 
