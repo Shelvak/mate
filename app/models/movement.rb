@@ -9,9 +9,9 @@ class Movement < ActiveRecord::Base
 
   attr_accessible :amount, :bank_id, :charged_at, :client_id, :code_id,
     :comment, :deposited_in, :devoted, :devoted_at, :mov_number, :total_amount, 
-    :auto_bank_name
+    :auto_bank_name, :auto_client_name, :auto_code_number
 
-  attr_accessor :auto_bank_name
+  attr_accessor :auto_bank_name, :auto_client_name, :auto_code_number
 
   validates :amount, :bank_id, :charged_at, :client_id, :code_id, :mov_number,
     presence: true
