@@ -10,7 +10,6 @@
             <th><%= Workplace.human_attribute_name 'city' %></th>
             <th><%= Workplace.human_attribute_name 'state' %></th>
             <th><%= Workplace.human_attribute_name 'country' %></th>
-            <th><%= Workplace.human_attribute_name 'client_id' %></th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -22,10 +21,15 @@
               <td><%= workplace.city %></td>
               <td><%= workplace.state %></td>
               <td><%= workplace.country %></td>
-              <td><%= workplace.client_id %></td>
               <td><%= link_to_show workplace %></td>
-              <td><%= link_to_edit edit_workplace_path(workplace) if can? :update, workplace %></td>
-              <td><%= link_to_destroy workplace if can? :destroy, workplace %></td>
+              <td>
+                <%= link_to_edit(
+                  edit_workplace_path(workplace)
+                ) if can? :update, workplace %>
+              </td>
+              <td>
+                <%= link_to_destroy workplace if can? :destroy, workplace %>
+              </td>
             </tr>
           <% end %>
         </tbody>

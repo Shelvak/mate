@@ -3,11 +3,13 @@ class Workplace < ActiveRecord::Base
 
   has_magick_columns address: :string
 
+  has_many :clients
+
   default_scope order('address ASC')
 
-  attr_accessible :address, :city, :client_id, :country, :state
+  attr_accessible :address, :city, :country, :state
 
-  validates :address, :client_id, :country, :state, presence: true
+  validates :address, :country, :state, presence: true
   validates :address, uniqueness: true
 
   def to_s

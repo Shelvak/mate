@@ -3,6 +3,8 @@ class Card < ActiveRecord::Base
 
   has_magick_columns name: :string
 
+  has_many :transactions
+
   default_scope order('name ASC')
   
   attr_accessible :address, :name, :website

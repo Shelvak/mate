@@ -55,6 +55,7 @@
         ident: 'Identificación'
         website: 'Sitio web'
         phone: 'Teléfono'
+        workplace_id: 'Lugar de trabajo'
       code:
         detail: 'Detalle'
         number: 'Número' 
@@ -121,7 +122,7 @@
     movements: 'Movimientos'
     users: 'Usuarios'
     transactions: 'Transacciones'
-    workplaces: 'Lugar de trabajo'
+    workplaces: 'Lugares de trabajo'
     
   messages:
     confirmation: '¿Está seguro?'

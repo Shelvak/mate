@@ -31,18 +31,15 @@ class WorkplaceTest < ActiveSupport::TestCase
     @workplace.address = ''
     @workplace.country = ''
     @workplace.state = ''
-    @workplace.client_id = ''
 
     assert @workplace.invalid?
-    assert_equal 4, @workplace.errors.size
+    assert_equal 3, @workplace.errors.size
     assert_equal [error_message_from_model(@workplace, :address, :blank)], 
       @workplace.errors[:address]
     assert_equal [error_message_from_model(@workplace, :country, :blank)],  
       @workplace.errors[:country]
     assert_equal [error_message_from_model(@workplace, :state, :blank)],  
       @workplace.errors[:state]
-    assert_equal [error_message_from_model(@workplace, :client_id, :blank)],   
-      @workplace.errors[:client_id]
   end
 
   test 'validates unique attributes' do

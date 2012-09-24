@@ -25,7 +25,6 @@ class WorkplaceInteractionsTest < ActionDispatch::IntegrationTest
       fill_in Workplace.human_attribute_name('city'), with: 'Godoy Cruz'
       fill_in Workplace.human_attribute_name('state'), with: 'Mendoza'
       select 'Chile', from: 'workplace_country'
-      fill_in Workplace.human_attribute_name('client_id'), with: 1
     end
 
     assert_difference 'Workplace.count' do

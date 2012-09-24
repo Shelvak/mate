@@ -26,6 +26,7 @@ class ClientInteractionsTest < ActionDispatch::IntegrationTest
       fill_in Client.human_attribute_name('email'), with: 'nation@thebest.com'
       fill_in Client.human_attribute_name('phone'), with: '5-3322-678'
       fill_in Client.human_attribute_name('website'), with: 'nation.com'
+      fill_in Client.human_attribute_name('workplace_id'), with: '1'
     end
 
     assert_difference 'Client.count' do

@@ -3,7 +3,10 @@ class Client < ActiveRecord::Base
 
   has_magick_columns name: :string, ident: :string
 
-  attr_accessible :email, :ident, :name, :phone, :website
+  has_many :movements
+  belongs_to :workplace
+
+  attr_accessible :email, :ident, :name, :phone, :website, :workplace_id
 
   validates :name, :email, :ident, presence: true 
   validates :name, :email, :ident, uniqueness: true 

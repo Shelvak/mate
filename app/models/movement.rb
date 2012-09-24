@@ -4,6 +4,8 @@ class Movement < ActiveRecord::Base
   has_magick_columns mov_number: :string, devoted_at: :date, charged_at: :date
 
   belongs_to :bank
+  belongs_to :client
+  belongs_to :code
 
   attr_accessible :amount, :bank_id, :charged_at, :client_id, :code_id,
     :comment, :deposited_in, :devoted, :devoted_at, :mov_number, :total_amount, 

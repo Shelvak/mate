@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920153842) do
+ActiveRecord::Schema.define(:version => 20120923234413) do
 
   create_table "advances", :force => true do |t|
     t.date     "charged_at",                                :null => false
     t.text     "detail",                                    :null => false
     t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
-    t.boolean  "state"
+    t.boolean  "state",                                     :null => false
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(:version => 20120920153842) do
   end
 
   create_table "clients", :force => true do |t|
-    t.string   "name",       :null => false
+    t.string   "name",         :null => false
     t.string   "phone"
-    t.string   "email",      :null => false
+    t.string   "email",        :null => false
     t.string   "website"
-    t.string   "ident",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "ident",        :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "workplace_id"
   end
 
   add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
@@ -127,7 +128,6 @@ ActiveRecord::Schema.define(:version => 20120920153842) do
     t.string   "city"
     t.string   "state",      :default => "Mendoza",   :null => false
     t.string   "country",    :default => "Argentina", :null => false
-    t.integer  "client_id",                           :null => false
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
   end

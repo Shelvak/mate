@@ -4,4 +4,5 @@ Fabricator(:client) do
   email     { Faker::Internet.email }
   website   { Faker::Internet.domain_name }
   ident     { |attrs| "#{attrs[:name]} #{Faker::Lorem.words.first}" }
+  workplace_id { rand(99) }
 end
