@@ -6,7 +6,7 @@ class Card < ActiveRecord::Base
   has_many :transactions
 
   default_scope order('name ASC')
-  
+
   attr_accessible :address, :name, :website
 
   validates :name, presence: true
@@ -14,5 +14,9 @@ class Card < ActiveRecord::Base
 
   def to_s
     self.name
+  end
+
+  def self.filtered_list(query)
+    query.present? ? magick_search(query) : scoped
   end
 end

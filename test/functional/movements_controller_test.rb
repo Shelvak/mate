@@ -82,4 +82,40 @@ class MovementsControllerTest < ActionController::TestCase
 
     assert banks.empty? 
   end
+
+  test 'should get autocomplete code list' do
+    code = Fabricate(:code)
+    get :autocomplete_for_code_number, format: :json, q: code.number
+    assert_response :success
+
+    codes = ActiveSupport::JSON.decode(@response.body)
+
+    assert_equal 1, codes.size
+    assert codes.all? { |d| d['label'].match /#{codes.number}/i }
+
+    get :autocomplete_for_code_number, format: :json, q: '200'
+    assert_response :success
+
+    codes = ActiveSupport::JSON.decode(@response.body)
+
+    assert codes.empty?
+  end
+
+  test 'should get autocomplete client list' do
+    client = Fabricate(:client)
+    get :autocomplete_for_client_name, format: :json, q: client.name
+    assert_response :success
+
+    clients = ActiveSupport::JSON.decode(@response.body)
+
+    assert_equal 1, clients.size
+    assert clients.all? { |d| d['label'].match /#{client.name}/i }
+
+    get :autocomplete_for_bank_name, format: :json, q: 'ashdahsd'
+    assert_response :success
+
+    clients = ActiveSupport::JSON.decode(@response.body)
+
+    assert clients.empty?
+  end
 end

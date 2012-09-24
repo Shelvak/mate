@@ -24,9 +24,13 @@
               <td><%= transaction.batch %></td>
               <td><%= l transaction.expiration, format: :long %></td>
               <td><%= transaction.place_id %></td>
-              <td><%= transaction.card_id %></td>
+              <td><%= link_to transaction.card, transaction.card %></td>
               <td><%= link_to_show transaction %></td>
-              <td><%= link_to_edit edit_transaction_path(transaction) if can? :update, transaction %></td>
+              <td>
+                <%= link_to_edit(
+                edit_transaction_path(transaction)
+              ) if can? :update, transaction %>
+              </td>
               <td><%= link_to_destroy transaction if can? :destroy, transaction %></td>
             </tr>
           <% end %>

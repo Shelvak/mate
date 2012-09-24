@@ -8,7 +8,18 @@
   <div class="form-inputs">
     <div class="row-fluid">
       <div class="span3">
-        <%= f.input :code_id %>
+        <%= f.label :code_id %>
+        <%= f.input :auto_code_number, label: false, input_html: {
+          value: @movement.code, class: 'span9 autocomplete-field',
+          data: {
+            'autocomplete-id-target' => '#movement_code_id',
+            'autocomplete-url' => autocomplete_for_code_number_movements_path(
+              format: :json
+            )
+          }
+        }  %>
+        <%= f.input :code_id, as: :hidden,
+          input_html: { class: 'autocomplete-id' } %>
       </div>
       <div class="span3">
         <%= f.input :mov_number %>
@@ -40,7 +51,18 @@
         <%= f.input :deposited_in, input_html: { class: 'span9' } %>
       </div>
       <div class="span4">
-        <%= f.input :client_id, input_html: { class: 'span9' } %>
+        <%= f.label :client_id %>
+        <%= f.input :auto_client_name, label: false, input_html: {
+          value: @movement.client, class: 'span9 autocomplete-field',
+          data: {
+            'autocomplete-id-target' => '#movement_client_id',
+            'autocomplete-url' => autocomplete_for_client_name_movements_path(
+              format: :json
+            )
+          }
+        }  %>
+        <%= f.input :client_id, as: :hidden,
+          input_html: { class: 'autocomplete-id' } %>
       </div>
       <div class="span4">
         <%= f.label :bank_id %>
@@ -48,7 +70,9 @@
           value: @movement.bank, class: 'span9 autocomplete-field',
           data: {
             'autocomplete-id-target' => '#movement_bank_id',
-            'autocomplete-url' => autocomplete_for_bank_name_movements_path(format: :json)
+            'autocomplete-url' => autocomplete_for_bank_name_movements_path(
+              format: :json
+            )
           }
         }  %>
         <%= f.input :bank_id, as: :hidden, 

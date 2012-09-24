@@ -3,7 +3,7 @@
 
   <p>
     <strong><%= Movement.human_attribute_name 'code_id' %></strong>:
-    <%= @movement.code_id %>
+    <%= link_to @movement.code, @movement.code %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'charged_at' %></strong>:
@@ -27,7 +27,7 @@
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'client_id' %></strong>:
-    <%= @movement.client_id %>
+    <%= link_to @movement.client, @movement.client %>
   </p>
   <p>
     <strong><%= Movement.human_attribute_name 'comment' %></strong>:

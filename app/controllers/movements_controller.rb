@@ -97,9 +97,25 @@ class MovementsController < ApplicationController
 
   def autocomplete_for_bank_name
     banks = Bank.filtered_list(params[:q]).order('name DESC').limit(10)
-    
+
     respond_to do |format|
       format.json { render json: banks }
+    end
+  end
+
+  def autocomplete_for_code_number
+    codes = Code.filtered_list(params[:q]).order('number DESC').limit(10)
+
+    respond_to do |format|
+      format.json { render json: codes }
+    end
+  end
+
+  def autocomplete_for_client_name
+    clients = Client.filtered_list(params[:q]).order('name DESC').limit(10)
+
+    respond_to do |format|
+      format.json { render json: clients }
     end
   end
 end

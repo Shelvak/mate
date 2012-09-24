@@ -23,7 +23,7 @@
   </p>
   <p>
     <strong><%= Transaction.human_attribute_name 'card_id' %></strong>:
-    <%= @transaction.card_id %>
+    <%= link_to @transaction.card, @transaction.card %>
   </p>
   
 </div>

@@ -15,4 +15,8 @@ class Workplace < ActiveRecord::Base
   def to_s
     [self.address, self.state].join(' - ')
   end
+
+  def self.filtered_list(query)
+    query.present? ? magick_search(query) : scoped
+  end
 end
