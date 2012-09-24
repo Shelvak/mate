@@ -65,6 +65,6 @@ class MovementTest < ActiveSupport::TestCase
     attrs = @movement.auto_attr_accessor_names
 
     assert attrs.size > 0
-    assert_equal ['bank'], attrs
+    assert_equal ['bank', 'client', 'code'].sort, attrs.sort
   end
 end

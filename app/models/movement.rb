@@ -30,7 +30,7 @@ class Movement < ActiveRecord::Base
     attrs = []
 
     Movement.attr_accessible[:default].each do |a|
-      matcher = a.match(/auto_(\w+)_name/)
+      matcher = a.match(/auto_(\w+)_\w+/)
       attrs << matcher[1] if matcher
     end
 

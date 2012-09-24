@@ -12,7 +12,7 @@ class Code < ActiveRecord::Base
   validates :number, uniqueness: true
 
   def to_s
-    self.number
+    self.number.to_s
   end
 
   alias_method :label, :to_s

@@ -1,6 +1,4 @@
 Mate::Application.routes.draw do
-  resources :advances, :banks, :cards, :clients, :codes,
-    :transactions, :workplaces
 
   resources :movements do
     get :autocomplete_for_bank_name, on: :collection
@@ -16,6 +14,9 @@ Mate::Application.routes.draw do
       put :update_profile
     end
   end
-  
+
+  resources :advances, :banks, :cards, :clients, :codes,
+    :transactions, :workplaces
+
   root to: 'movements#index'
 end

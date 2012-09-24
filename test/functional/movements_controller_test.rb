@@ -85,13 +85,14 @@ class MovementsControllerTest < ActionController::TestCase
 
   test 'should get autocomplete code list' do
     code = Fabricate(:code)
-    get :autocomplete_for_code_number, format: :json, q: code.number
+
+    get :autocomplete_for_code_number, format: :json, q: code.number.to_s
     assert_response :success
 
     codes = ActiveSupport::JSON.decode(@response.body)
 
     assert_equal 1, codes.size
-    assert codes.all? { |d| d['label'].match /#{codes.number}/i }
+    assert codes.all? { |d| d['label'].match /#{code.number}/i }
 
     get :autocomplete_for_code_number, format: :json, q: '200'
     assert_response :success

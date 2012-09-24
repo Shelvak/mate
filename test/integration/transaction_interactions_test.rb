@@ -91,6 +91,3 @@ class TransactionInteracionsTets < ActionDispatch::IntegrationTest
     end
   end
 end
-
-
-
