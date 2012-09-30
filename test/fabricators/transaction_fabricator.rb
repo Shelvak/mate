@@ -4,5 +4,5 @@ Fabricator(:transaction) do
   batch      { rand(99) }
   expiration { rand(10.years).ago }
   place_id   { rand(99) } 
-  card_id    { rand(99) }  
+  card_id    { Fabricate(:card).id }  
 end

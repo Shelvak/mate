@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require 'test_helper'
 
 class TransactionInteracionsTets < ActionDispatch::IntegrationTest
@@ -21,6 +19,8 @@ class TransactionInteracionsTets < ActionDispatch::IntegrationTest
     assert_equal new_transaction_path, current_path
 
     assert page.has_css?('.form-inputs')
+    
+    card = Fabricate(:card)
 
     within '.form-inputs' do
       fill_in Transaction.human_attribute_name('charged_at'),
@@ -30,7 +30,8 @@ class TransactionInteracionsTets < ActionDispatch::IntegrationTest
       fill_in Transaction.human_attribute_name('expiration'),
         with: I18n.l(Time.zone.today)
       fill_in Transaction.human_attribute_name('place_id'), with: 21
-      fill_in Transaction.human_attribute_name('card_id'), with: 35
+      fill_in 'transaction_auto_card_name', with: card.name
+      select_first_autocomplete_item('#transaction_auto_card_name')
     end
 
     assert_difference 'Transaction.count' do
