@@ -94,4 +94,12 @@ class ClientsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def autocomplete_for_workplace_name
+    workplaces = Workplace.filtered_list(params[:q]).order('address DESC').limit 10
+
+    respond_to do |format|
+      format.json { render json: workplaces } 
+    end
+  end
 end

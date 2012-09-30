@@ -6,7 +6,10 @@ class Client < ActiveRecord::Base
   has_many :movements
   belongs_to :workplace
 
-  attr_accessible :email, :ident, :name, :phone, :website, :workplace_id
+  attr_accessible :email, :ident, :name, :phone, :website, :workplace_id,
+    :auto_workplace_name
+
+  attr_accessor :auto_workplace_name
 
   validates :name, :email, :ident, presence: true 
   validates :name, :email, :ident, uniqueness: true 

@@ -15,7 +15,7 @@
   </p>
   <p>
     <strong><%= Client.human_attribute_name 'website' %></strong>:
-    <%= @client.website %>
+    <%= link_to_website @client.website %>
   </p>
   <p>
     <strong><%= Client.human_attribute_name 'ident' %></strong>:

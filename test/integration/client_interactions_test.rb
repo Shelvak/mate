@@ -3,6 +3,7 @@ require 'test_helper'
 class ClientInteractionsTest < ActionDispatch::IntegrationTest
   setup do
     @client = Fabricate(:client)
+    @workplace = Fabricate(:workplace)
   end
 
   test 'should create client' do
@@ -26,7 +27,9 @@ class ClientInteractionsTest < ActionDispatch::IntegrationTest
       fill_in Client.human_attribute_name('email'), with: 'nation@thebest.com'
       fill_in Client.human_attribute_name('phone'), with: '5-3322-678'
       fill_in Client.human_attribute_name('website'), with: 'nation.com'
-      fill_in Client.human_attribute_name('workplace_id'), with: '1'
+      fill_in 'client_auto_workplace_name', with: @workplace.address
+      assert page.has_xpath?("//li[@class='ui-menu-item']", visible: true)
+      find('#client_auto_workplace_name').native.send_keys :arrow_down, :tab
     end
 
     assert_difference 'Client.count' do

@@ -5,8 +5,6 @@ class Workplace < ActiveRecord::Base
 
   has_many :clients
 
-  default_scope order('address ASC')
-
   attr_accessible :address, :city, :country, :state
 
   validates :address, :country, :state, presence: true
@@ -14,6 +12,17 @@ class Workplace < ActiveRecord::Base
 
   def to_s
     [self.address, self.state].join(' - ')
+  end
+
+  alias_method :label, :to_s
+
+  def as_json(options = nil)
+    default_options = {
+      only: [:id],
+      methods: [:label]
+    }
+
+    super(default_options.merge(options || {}))
   end
 
   def self.filtered_list(query)

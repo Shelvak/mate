@@ -1,14 +1,22 @@
 Mate::Application.routes.draw do
 
   resources :movements do
-    get :autocomplete_for_bank_name, on: :collection
-    get :autocomplete_for_code_number, on: :collection
-    get :autocomplete_for_client_name, on: :collection
+    collection do
+      get :autocomplete_for_bank_name
+      get :autocomplete_for_code_number
+      get :autocomplete_for_client_name
+    end
   end
 
   resources :transactions do
-    get :autocomplete_for_card_name, on: :collection
-    get :autocomplete_for_place_name, on: :collection
+    collection do
+      get :autocomplete_for_card_name
+      get :autocomplete_for_place_name
+    end
+  end
+
+  resources :clients do
+    get :autocomplete_for_workplace_name, on: :collection
   end
 
   devise_for :users
@@ -20,8 +28,8 @@ Mate::Application.routes.draw do
     end
   end
 
-  resources :advances, :banks, :cards, :clients, :codes,
-    :transactions, :workplaces
+  resources :advances, :banks, :cards, :codes,
+    :workplaces
 
   root to: 'movements#index'
 end

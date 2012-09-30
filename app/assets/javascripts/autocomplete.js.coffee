@@ -14,7 +14,6 @@ jQuery ($)->
           data: { q: request.term }
           success: (data)->
             response $.map data, (item)->
-              console.log(item)
               content = $('<div></div>')
 
               content.append $('<span class="title"></span>').text(item.label)

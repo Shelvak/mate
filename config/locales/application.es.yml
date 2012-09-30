@@ -205,7 +205,7 @@
       stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
       empty_index:
         html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
-      new: 'Nuevo movimiento'
+      new: 'Nuevo Movimiento'
       show: 'Detalle de movimiento %{movement}' 
     users:
       index_title: 'Listado de usuarios'

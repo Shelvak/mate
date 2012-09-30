@@ -4,7 +4,7 @@ class WorkplacesController < ApplicationController
   # GET /workplaces.json
   def index
     @title = t('view.workplaces.index_title')
-    @workplaces = Workplace.page(params[:page])
+    @workplaces = Workplace.order('address DESC').page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

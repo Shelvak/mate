@@ -69,4 +69,9 @@ class ActionDispatch::IntegrationTest
     remove_confirm = "$('a[data-confirm]').data('confirm', '').removeAttr('data-confirm')"
     page.execute_script(remove_confirm)
   end
+
+  def select_first_autocomplete_item(field)
+    assert page.has_xpath?("//li[@class='ui-menu-item']", visible: true)
+    find(field).native.send_keys :arrow_down, :tab
+  end
 end
