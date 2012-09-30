@@ -49,7 +49,9 @@ class MovementsControllerTest < ActionController::TestCase
 
   test "should update movement" do
     assert_no_difference 'Movement.count' do
-      put :update, id: @movement, movement: Fabricate.attributes_for(:movement, amount: 3.23)
+      put :update, id: @movement, movement: Fabricate.attributes_for(
+        :movement, amount: 3.23
+      )
     end
 
     assert_redirected_to movement_url(assigns(:movement))

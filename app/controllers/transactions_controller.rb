@@ -89,4 +89,20 @@ class TransactionsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def autocomplete_for_card_name
+    cards = Card.filtered_list(params[:q]).order('name DESC').limit(10)
+
+    respond_to do |format|
+      format.json { render json: cards }
+    end
+  end
+
+  def autocomplete_for_place_name
+    places = Place.filtered_list(params[:q]).order('name DESC').limit(10)
+
+    respond_to do |format|
+      format.json { render json: places }
+    end
+  end
 end

@@ -1,8 +1,8 @@
-class Advance < ActiveRecord::Base
+class Advance < BasicMove
   has_paper_trail
 
   has_magick_columns detail: :string
-  
+
   attr_accessible :amount, :charged_at, :detail, :state
 
   validates :amount, :charged_at, :detail, presence: true

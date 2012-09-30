@@ -5,9 +5,13 @@ class Transaction < ActiveRecord::Base
 
   belongs_to :card
 
-  attr_accessible :amount, :batch, :card_id, :charged_at, :expiration, :place_id
+  attr_accessible :amount, :batch, :card_id, :charged_at, :expiration, 
+    :place_id, :auto_card_name
 
-  validates :amount, :card_id, :charged_at, :expiration, :place_id, presence: true
+  attr_accessor :auto_card_name
+
+  validates :amount, :card_id, :charged_at, :expiration, :place_id, 
+    presence: true
 
   def to_s
     [self.card, self.batch].join(' - ')
@@ -15,5 +19,16 @@ class Transaction < ActiveRecord::Base
 
   def self.filtered_list(query)
     query.present? ? magick_search(query) : scoped
+  end
+
+  def auto_attr_accessor_names
+    attrs = []
+
+    Transaction.attr_accessible[:default].each do |a|
+      matcher = a.match(/auto_(\w+)_\w+/)
+      attrs << matcher[1] if matcher
+    end
+
+    attrs
   end
 end

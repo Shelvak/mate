@@ -6,6 +6,11 @@ Mate::Application.routes.draw do
     get :autocomplete_for_client_name, on: :collection
   end
 
+  resources :transactions do
+    get :autocomplete_for_card_name, on: :collection
+    get :autocomplete_for_place_name, on: :collection
+  end
+
   devise_for :users
   
   resources :users do

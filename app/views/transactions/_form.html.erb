@@ -7,11 +7,22 @@
     <%= f.input :batch %>
     <%= f.input :expiration, as: :date_picker %>
     <%= f.input :place_id %>
-    <%= f.input :card_id %>
-  </div>
+    <%= f.label :card_id %>
+    <%= f.input :auto_card_name, label: false, input_html: {
+    value: @transaction.card, class: 'span3 autocomplete-field',
+    data: {
+      'autocomplete-id-target' => '#transaction_card_id',
+      'autocomplete-url' => autocomplete_for_card_name_transactions_path(
+        format: :json
+      )
+     }
+    }  %>
+    <%= f.input :card_id, as: :hidden,
+      input_html: { class: 'autocomplete-id' } %> 
+</div>
 
-  <div class="form-actions">
-    <div class="pull-right"><%= yield :form_actions %></div>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
+<div class="form-actions">
+  <div class="pull-right"><%= yield :form_actions %></div>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+</div>
 <% end %>
