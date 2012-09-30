@@ -25,6 +25,9 @@
       movement:
         one: 'Movimiento'
         other: 'Movimientos'
+      place:
+        one: 'Establecimiento'
+        other: 'Establecimientos'
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -71,6 +74,8 @@
         bank_id: 'Banco sucursal'
         client_id: 'Recibido a'
         code_id: 'Código'
+      place:
+        name: 'Establecimiento'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -120,6 +125,7 @@
     codes: 'Códigos'
     menu: 'Menu'
     movements: 'Movimientos'
+    places: 'Establecimientos'
     users: 'Usuarios'
     transactions: 'Transacciones'
     workplaces: 'Lugares de trabajo'
@@ -143,7 +149,7 @@
       correctly_updated: 'Anticipo actualizado correctamente.'
       stale_object_error: 'El anticipo no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún anticipo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo anticipo</span>'
+        html: 'No se ha creado ningún anticipo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Anticipo</span>'
       new: 'Nuevo Anticipo'
     banks:
       index_title: 'Listado de bancos'
@@ -155,7 +161,7 @@
       correctly_deleted: 'Banco eliminado correctamente.'
       stale_object_error: 'El banco no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo banco</span>'
+        html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Banco</span>'
       new: 'Nuevo Banco'
       edit: 'Modificar Banco'
     cards:
@@ -167,7 +173,7 @@
       correctly_updated: 'Tarjeta actualizada correctamente.'
       stale_object_error: 'La tarjeta no pudo ser actualizada, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva tarjeta</span>'
+        html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva Tarjeta</span>'
       new: 'Nueva Tarjeta'
       edit: 'Modificar Tarjeta'
     clients:
@@ -180,7 +186,7 @@
       correctly_deleted: 'Cliente eliminado correctamente.'
       stale_object_error: 'El cliente no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún cliente hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo cliente</span>'
+        html: 'No se ha creado ningún cliente hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Cliente</span>'
       new: 'Nuevo Cliente'
       show_title_for: 'Detalle de %{client}'
     codes:
@@ -192,7 +198,7 @@
       correctly_updated: 'Código actualizado correctamente.'
       stale_object_error: 'El código no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún código hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo código</span>'
+        html: 'No se ha creado ningún código hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Código</span>'
       new: 'Nuevo Código'
       edit: 'Modificar Código'
     movements:
@@ -204,9 +210,20 @@
       correctly_updated: 'Movimiento actualizado correctamente.'
       stale_object_error: 'El movimiento no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo movimiento</span>'
+        html: 'No se ha creado ningún movimiento hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Movimiento</span>'
       new: 'Nuevo Movimiento'
       show: 'Detalle de movimiento %{movement}' 
+    places:
+      index_title: 'Listado de establecimientos'
+      show_title: 'Detalle del establecimiento'
+      new_title: 'Nuevo establecimiento'
+      edit_title: 'Modificar establecimiento'
+      correctly_created: 'Establecimiento agregado correctamente.'
+      correctly_updated: 'Establecimiento actualizado correctamente.'
+      stale_object_error: 'El establecimiento no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún lugar hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Establecimiento</span>'
+      new: 'Nuevo Establecimiento'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
@@ -216,7 +233,7 @@
       correctly_updated: 'Usuario actualizado correctamente.'
       stale_object_error: 'El usuario no pudo ser actualizado, intente nuevamente.'
       empty_index:
-        html: 'No se ha creado ningún usuario hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo usuario</span>'
+        html: 'No se ha creado ningún usuario hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Usuario</span>'
       new: 'Nuevo usuario'
       update_profile: 'Actualizar datos'
       update_password: 'Actualizar contraseña'

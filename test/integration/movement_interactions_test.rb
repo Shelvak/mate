@@ -42,6 +42,9 @@ class MovementInteractionsTest < ActionDispatch::IntegrationTest
       select_first_autocomplete_item('#movement_auto_client_name')
       fill_in 'movement_auto_bank_name', with: bank.name
       select_first_autocomplete_item('#movement_auto_bank_name')
+
+      fill_in Movement.human_attribute_name('comment'),
+        with: Faker::Lorem.paragraph
     end
 
     assert_difference 'Movement.count' do

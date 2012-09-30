@@ -59,14 +59,6 @@ class MovementsControllerTest < ActionController::TestCase
 
   end
 
-  test "should destroy movement" do
-    assert_difference 'Movement.count', -1 do
-      delete :destroy, id: @movement
-    end
-
-    assert_redirected_to movements_url
-  end
-
   test 'should get autocomplete bank list' do
     bank = Fabricate(:bank)
     get :autocomplete_for_bank_name, format: :json, q: bank.name

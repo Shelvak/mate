@@ -30,6 +30,12 @@
     ) if can?(:read, Movement) %>
     </li>
     <li>
+      <%= show_menu_link(
+        name: 'places', controllers: 'places',
+        path: places_path
+      ) if can?(:read, Place) %>
+    </li>
+    <li>
     <%= show_menu_link(
       name: 'users', controllers: 'users', path: users_path
     ) if can?(:read, User) %>

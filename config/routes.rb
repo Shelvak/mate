@@ -1,6 +1,6 @@
 Mate::Application.routes.draw do
 
-  resources :movements do
+  resources :movements, except: :destroy do
     collection do
       get :autocomplete_for_bank_name
       get :autocomplete_for_code_number
@@ -28,7 +28,7 @@ Mate::Application.routes.draw do
     end
   end
 
-  resources :advances, :banks, :cards, :codes,
+  resources :advances, :banks, :cards, :codes, :places,
     :workplaces
 
   root to: 'movements#index'

@@ -3,15 +3,16 @@ class Transaction < ActiveRecord::Base
 
   has_magick_columns batch: :string
 
-  belongs_to :card
-
   attr_accessible :amount, :batch, :card_id, :charged_at, :expiration, 
-    :place_id, :auto_card_name
+    :place_id, :auto_card_name, :auto_place_name
 
-  attr_accessor :auto_card_name
+  attr_accessor :auto_card_name, :auto_place_name
 
   validates :amount, :card_id, :charged_at, :expiration, :place_id, 
     presence: true
+
+  belongs_to :card
+  belongs_to :place
 
   def to_s
     [self.card, self.batch].join(' - ')
