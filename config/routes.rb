@@ -1,5 +1,5 @@
 Mate::Application.routes.draw do
-
+  
   resources :movements, except: :destroy do
     collection do
       get :autocomplete_for_bank_name

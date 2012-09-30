@@ -1,10 +1,15 @@
 class PlacesController < ApplicationController
+  before_filter :authenticate_user!
+
+  check_authorization
+  load_and_authorize_resource
   
   # GET /places
   # GET /places.json
   def index
     @title = t('view.places.index_title')
-    @places = Place.order('name DESC').page(params[:page])
+    @searchable = true
+    @places = Place.filtered_list(params[:q]).order('name DESC').page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,7 +90,7 @@ class PlacesController < ApplicationController
     @place.destroy
 
     respond_to do |format|
-      format.html { redirect_to places_url }
+      format.html { redirect_to places_url, notice: t('view.places.correctly_deleted') }
       format.json { head :ok }
     end
   end
