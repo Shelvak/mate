@@ -1,11 +1,12 @@
-<%= simple_form_for(@workplace) do |f| %>
+<%= simple_form_for @workplace, defaults: { input_html: { class: 'span6' } } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :address %>
     <%= f.input :city %>
     <%= f.input :state %>
-    <%= f.input :country, collection: select_for_workplace_country %>
+    <%= f.input :country, group_method: :countries,
+      priority: ['Argentina', 'Brasil', 'Chile'] %>
   </div>
 
   <div class="form-actions">

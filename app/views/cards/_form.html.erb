@@ -1,4 +1,4 @@
-<%= simple_form_for(@card) do |f| %>
+<%= simple_form_for @card, defaults: { input_html: { class: 'span6' } } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

@@ -1,4 +1,4 @@
-<%= simple_form_for(@transaction) do |f| %>
+<%= simple_form_for @transaction, defaults: { input_html: { class: 'span6' } } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,7 +9,7 @@
     <%= f.input :place_id %>
     <%= f.label :card_id %>
     <%= f.input :auto_card_name, label: false, input_html: {
-    value: @transaction.card, class: 'span3 autocomplete-field',
+    value: @transaction.card, class: 'autocomplete-field span6',
     data: {
       'autocomplete-id-target' => '#transaction_card_id',
       'autocomplete-url' => autocomplete_for_card_name_transactions_path(

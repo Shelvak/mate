@@ -9,6 +9,12 @@ class Advance < BasicMove
 
   validates :state, inclusion: { in: [true, false]}
 
+  def initialize(attributes = nil, options = {})
+    super(attributes, options)
+
+    self.state ||= false
+  end
+
   def to_s
     self.detail
   end

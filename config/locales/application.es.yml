@@ -144,7 +144,7 @@
       stale_object_error: 'El anticipo no pudo ser actualizado, intente nuevamente.'
       empty_index:
         html: 'No se ha creado ningún anticipo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo anticipo</span>'
-      new: 'Nuevo anticipo'
+      new: 'Nuevo Anticipo'
     banks:
       index_title: 'Listado de bancos'
       show_title: 'Detalle de banco'
@@ -168,8 +168,8 @@
       stale_object_error: 'La tarjeta no pudo ser actualizada, intente nuevamente.'
       empty_index:
         html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva tarjeta</span>'
-      new: 'Nueva tarjeta'
-      edit: 'Modificar tarjeta'
+      new: 'Nueva Tarjeta'
+      edit: 'Modificar Tarjeta'
     clients:
       index_title: 'Listado de clientes'
       show_title: 'Detalle de cliente'
