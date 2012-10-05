@@ -1,0 +1,25 @@
+<div class="readonly-data">
+  <h2><%= @petty_cash %></h2>
+
+  <p>
+    <strong><%= PettyCash.human_attribute_name 'charged_at' %></strong>:
+    <%= l @petty_cash.charged_at, format: :long %>
+  </p>
+  <p>
+    <strong><%= PettyCash.human_attribute_name 'detail' %></strong>:
+    <%= simple_format @petty_cash.detail %>
+  </p>
+  <p>
+    <strong><%= PettyCash.human_attribute_name 'amount' %></strong>:
+    <%= number_to_currency @petty_cash.amount %>
+  </p>
+  <p>
+    <strong><%= PettyCash.human_attribute_name 'state' %></strong>:
+    <%= @petty_cash.state ? 'Salida' : 'Entrada' %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_petty_cash_path(@petty_cash) if can? :update, @petty_cash %> |
+  <%= link_to t('label.list'), petty_cashes_path %>
+</div>

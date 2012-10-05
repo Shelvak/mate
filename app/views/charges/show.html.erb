@@ -1,0 +1,25 @@
+<div class="readonly-data">
+  <h2><%= @charge %></h2>
+
+  <p>
+    <strong><%= Charge.human_attribute_name 'charged_at' %></strong>:
+    <%= l @charge.charged_at, format: :long %>
+  </p>
+  <p>
+    <strong><%= Charge.human_attribute_name 'detail' %></strong>:
+    <%= simple_format @charge.detail %>
+  </p>
+  <p>
+    <strong><%= Charge.human_attribute_name 'amount' %></strong>:
+    <%= number_to_currency @charge.amount %>
+  </p>
+  <p>
+    <strong><%= Charge.human_attribute_name 'state' %></strong>:
+    <%= @charge.state ? 'Salida' : 'Entrada' %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_charge_path(@charge) if can? :update, @charge %> |
+  <%= link_to t('label.list'), charges_path %>
+</div>

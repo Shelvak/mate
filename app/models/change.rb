@@ -1,0 +1,4 @@
+class Charge < BasicMove
+
+
+end

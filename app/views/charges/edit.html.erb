@@ -1,0 +1,6 @@
+<%= content_for :form_actions do %>
+  <%= link_to t('label.show'), @charge %> |
+  <%= link_to t('label.list'), charges_path %>
+<% end %>
+
+<%= render 'form' %>

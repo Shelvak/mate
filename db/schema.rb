@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930200223) do
+ActiveRecord::Schema.define(:version => 20121005113752) do
 
   create_table "advances", :force => true do |t|
-    t.date     "charged_at",                                :null => false
-    t.text     "detail",                                    :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
-    t.boolean  "state",                                     :null => false
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.date     "charged_at",                                                   :null => false
+    t.text     "detail",                                                       :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
+    t.boolean  "state",                                     :default => false, :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
   end
 
   create_table "banks", :force => true do |t|
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(:version => 20120930200223) do
     t.string   "website"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "charges", :force => true do |t|
+    t.date     "charged_at",                                                   :null => false
+    t.text     "detail",                                                       :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
+    t.boolean  "state",                                     :default => false, :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
   end
 
   create_table "clients", :force => true do |t|
@@ -74,6 +83,15 @@ ActiveRecord::Schema.define(:version => 20120930200223) do
     t.integer  "client_id",                                   :null => false
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "petty_cashes", :force => true do |t|
+    t.date     "charged_at",                                                   :null => false
+    t.text     "detail",                                                       :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
+    t.boolean  "state",                                     :default => false, :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
   end
 
   create_table "places", :force => true do |t|

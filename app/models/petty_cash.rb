@@ -1,0 +1,4 @@
+class PettyCash < BasicMove
+
+
+end

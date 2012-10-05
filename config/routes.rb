@@ -28,8 +28,8 @@ Mate::Application.routes.draw do
     end
   end
 
-  resources :advances, :banks, :cards, :codes, :places,
-    :workplaces
+  resources :advances, :banks, :cards, :charges, :codes, 
+    :petty_cashes, :places, :workplaces
 
   root to: 'movements#index'
 end
