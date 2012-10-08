@@ -10,6 +10,19 @@
         <div class="nav-collapse">
           <ul class='nav'>
             <%= render partial: 'shared/menu_dropdown' %>
+
+            <%= show_menu_link(
+              name: 'advances', controllers: 'advances', path: advances_path
+            ) if can?(:read, Advance) %>
+
+            <%= show_menu_link(
+              name: 'movements', controllers: 'movements', path: movements_path
+            ) if can?(:read, Movement) %>
+
+            <%= show_menu_link(
+              name: 'transactions', controllers: 'transactions',
+              path: transactions_path
+            ) if can?(:read, Transaction) %>
           </ul>
 
           <%= render partial: 'shared/nav_search' %>

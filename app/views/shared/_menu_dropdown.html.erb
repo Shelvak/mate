@@ -1,67 +1,39 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <%= t('menu.menu') %>
+    <%= t('menu.administration') %>
     <b class="caret"></b>
   </a>
-<ul class="dropdown-menu">
-  <li>
+  <ul class="dropdown-menu">
+
     <%= show_menu_link(
-      name: 'advances', controllers: 'advances', path: advances_path
-    ) if can?(:read, Advance) %>
-  </li>
-  <li>
+      name: 'banks', controllers: 'banks', path: banks_path
+    ) if can?(:read, Bank) %>
+
     <%= show_menu_link(
-      name: 'movements', controllers: 'movements', path: movements_path
-    ) if can?(:read, Movement) %>
-  </li>
-  <li>
+      name: 'places', controllers: 'places',
+      path: places_path
+    ) if can?(:read, Place) %>
+
     <%= show_menu_link(
-      name: 'transactions', controllers: 'transactions',
-      path: transactions_path
-    ) if can?(:read, Transaction) %>
-  </li>
+      name: 'users', controllers: 'users', path: users_path
+    ) if can?(:read, User) %>
   
-   <li class="dropdown-submenu">
-     <a tabindex="-1" href="#">Administraci&oacute;n</a>
-     <ul class="dropdown-menu">
-       <li>
-          <%= show_menu_link(
-            name: 'banks', controllers: 'banks', path: banks_path
-          ) if can?(:read, Bank) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'places', controllers: 'places',
-            path: places_path
-          ) if can?(:read, Place) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'users', controllers: 'users', path: users_path
-          ) if can?(:read, User) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'workplaces', controllers: 'workplaces',
-            path: workplaces_path
-          ) if can?(:read, Workplace) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'cards', controllers: 'cards', path: cards_path
-          ) if can?(:read, Card) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'codes', controllers: 'codes', path: codes_path
-          ) if can?(:read, Code) %>
-        </li>
-        <li>
-          <%= show_menu_link(
-            name: 'clients', controllers: 'clients', path: clients_path
-          ) if can?(:read, Client) %>
-        </li>
-      </ul>
-    </li>  
-    </ul>
-    </li>
+    <%= show_menu_link(
+      name: 'workplaces', controllers: 'workplaces',
+      path: workplaces_path
+    ) if can?(:read, Workplace) %>
+  
+    <%= show_menu_link(
+      name: 'cards', controllers: 'cards', path: cards_path
+    ) if can?(:read, Card) %>
+  
+    <%= show_menu_link(
+      name: 'codes', controllers: 'codes', path: codes_path
+    ) if can?(:read, Code) %>
+  
+    <%= show_menu_link(
+      name: 'clients', controllers: 'clients', path: clients_path
+    ) if can?(:read, Client) %>
+
+  </ul>
+</li>

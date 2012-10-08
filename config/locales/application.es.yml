@@ -119,11 +119,11 @@
     actions:
       logout: 'Salir de la aplicación'
     advances: 'Adelantos'  
+    administration: 'Administración'
     banks: 'Bancos'
     cards: 'Tarjetas'
     clients: 'Clientes'
     codes: 'Códigos'
-    menu: 'Menu'
     movements: 'Movimientos'
     places: 'Establecimientos'
     users: 'Usuarios'
