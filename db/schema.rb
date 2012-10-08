@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120930200223) do
     t.date     "charged_at",                                :null => false
     t.text     "detail",                                    :null => false
     t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
-    t.boolean  "state",                                     :null => false
+    t.boolean  "state"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
