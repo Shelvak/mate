@@ -67,7 +67,7 @@
         number: 'Número' 
       flow:
         code: 'Código'
-        subcode: 'Sub código'
+        subcode: 'SubCódigo'
         charged_at: 'Cargado el'
         detail: 'Detalle'
         receipt: 'Nro Recibo'
@@ -229,6 +229,11 @@
       edit: 'Modificar Flujo'
       in: 'Entrada de dinero'
       out: 'Salida de dinero'
+      kinds:
+        money: 'Pesos'
+        dollar: 'Dolares'
+        third_checks: 'Cheques de terceros'
+        own_checks: 'Cheques propios'
     movements:
       index_title: 'Listado de movimientos'
       show_title: 'Detalle de movimiento'

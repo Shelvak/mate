@@ -1,6 +1,13 @@
 class Cash < ActiveRecord::Base
   has_paper_trail
 
+  KINDS = {
+    money: 'm',
+    dollar: 'd',
+    third_checks: 't',
+    own_checks: 'o'
+  }
+
   attr_accessible :amount, :detail
 
   validates :amount, :detail, presence: true

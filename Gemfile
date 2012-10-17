@@ -16,6 +16,7 @@ gem 'validates_timeliness'
 gem 'sidekiq'
 gem 'capistrano'
 gem 'country_select'
+gem 'nested_form'
 
 group :assets do
   gem 'sass-rails'

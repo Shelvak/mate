@@ -5,7 +5,13 @@ module FlowsHelper
     ]
 
     form.input :in, collection: in_or_out_collection,
-      selected: form.object.in, prompt: false,
-      input_html: { class: 'span6' }
+      selected: form.object.in, prompt: false
+  end
+
+  def cash_detail_select_for_flows(form)
+    detail_kinds = Cash::KINDS.map { |k, v| p [t("view.flows.kinds.#{k}"), v] }
+
+    form.input :detail, collection: detail_kinds, label: false,
+      selected: form.object.detail, prompt: false
   end
 end
