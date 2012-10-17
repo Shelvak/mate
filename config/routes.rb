@@ -28,7 +28,7 @@ Mate::Application.routes.draw do
     end
   end
 
-  resources :advances, :banks, :cards, :codes, :places,
+  resources :advances, :banks, :cards, :codes, :flows, :places,
     :workplaces
 
   root to: 'movements#index'

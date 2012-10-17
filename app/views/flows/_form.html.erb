@@ -1,0 +1,19 @@
+<%= simple_form_for @flow, defaults: { input_html: { class: 'span6' } } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :code %>
+    <%= f.input :subcode %>
+    <%= f.input :charged_at, as: :date_picker %>
+    <%= f.input :detail %>
+    <%= f.input :receipt %>
+    <%= f.input :register %>
+    <%= f.input :total_amount %>
+    <%= in_or_out_select_for_flow(f) %>
+  </div>
+
+  <div class="form-actions">
+    <div class="pull-right"><%= yield :form_actions %></div>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -22,6 +22,9 @@
       code:
         one: 'Código'
         other: 'Códigos'
+      flow:
+        one: 'Flujo de dinero'
+        other: 'Flujos de dinero'
       movement:
         one: 'Movimiento'
         other: 'Movimientos'
@@ -62,6 +65,15 @@
       code:
         detail: 'Detalle'
         number: 'Número' 
+      flow:
+        code: 'Código'
+        subcode: 'Sub código'
+        charged_at: 'Cargado el'
+        detail: 'Detalle'
+        receipt: 'Nro Recibo'
+        register: 'Nro Registro'
+        total_amount: 'Monto'
+        in: 'Entrada'
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Número de movimiento'
@@ -123,6 +135,7 @@
     cards: 'Tarjetas'
     clients: 'Clientes'
     codes: 'Códigos'
+    flows: 'Flujos de dinero'
     menu: 'Menu'
     movements: 'Movimientos'
     places: 'Establecimientos'
@@ -201,6 +214,21 @@
         html: 'No se ha creado ningún código hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Código</span>'
       new: 'Nuevo Código'
       edit: 'Modificar Código'
+    flows:
+      index_title: 'Listado de flujos'
+      show_title: 'Detalle del flujo'
+      new_title: 'Nuevo flujo'
+      edit_title: 'Modificar flujo'
+      correctly_created: 'Flujo agregado correctamente.'
+      correctly_updated: 'Flujo actualizado correctamente.'
+      correctly_deleted: 'Flujo eliminado correctamente.'
+      stale_object_error: 'El flujo no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún flujo hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Flujo</span>'
+      new: 'Nuevo Flujo'
+      edit: 'Modificar Flujo'
+      in: 'Entrada de dinero'
+      out: 'Salida de dinero'
     movements:
       index_title: 'Listado de movimientos'
       show_title: 'Detalle de movimiento'

@@ -1,0 +1,41 @@
+<div class="readonly-data">
+  <h2><%= @flow %></h2>
+
+  <p>
+    <strong><%= Flow.human_attribute_name 'code' %></strong>:
+    <%= @flow.code %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'subcode' %></strong>:
+    <%= @flow.subcode %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'charged_at' %></strong>:
+    <%= @flow.charged_at %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'detail' %></strong>:
+    <%= @flow.detail %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'receipt' %></strong>:
+    <%= @flow.receipt %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'register' %></strong>:
+    <%= @flow.register %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'total_amount' %></strong>:
+    <%= @flow.total_amount %>
+  </p>
+  <p>
+    <strong><%= Flow.human_attribute_name 'in' %></strong>:
+    <%= @flow.in %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), edit_flow_path(@flow) if can? :update, @flow %> |
+  <%= link_to t('label.list'), flows_path %>
+</div>

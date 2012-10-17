@@ -52,5 +52,9 @@
         path: transactions_path
       ) if can?(:read, Transaction) %>
     </li>
+      <%= show_menu_link(
+        name: 'flows', controllers: 'flows',
+        path: flows_path
+      ) if can?(:read, Flow) %>
   </ul>
 </li>

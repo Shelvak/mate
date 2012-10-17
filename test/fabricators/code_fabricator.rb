@@ -1,4 +1,4 @@
 Fabricator(:code) do
-  number { rand(99) }
+  number { rand(10000) }
   detail { Faker::Lorem.sentence }
 end

@@ -1,0 +1,50 @@
+<% if @flows.empty? %>
+  <%= render 'shared/empty_index' %>
+<% else %>
+  <div class="row">
+    <div class="span12">
+      <table class="table resource-list">
+        <thead>
+          <tr>
+            <th><%= Flow.human_attribute_name 'code' %></th>
+            <th><%= Flow.human_attribute_name 'subcode' %></th>
+            <th><%= Flow.human_attribute_name 'charged_at' %></th>
+            <th><%= Flow.human_attribute_name 'detail' %></th>
+            <th><%= Flow.human_attribute_name 'receipt' %></th>
+            <th><%= Flow.human_attribute_name 'register' %></th>
+            <th><%= Flow.human_attribute_name 'total_amount' %></th>
+            <th><%= Flow.human_attribute_name 'in' %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @flows.each do |flow| %>
+            <tr>
+              <td><%= flow.code %></td>
+              <td><%= flow.subcode %></td>
+              <td><%= flow.charged_at %></td>
+              <td><%= flow.detail %></td>
+              <td><%= flow.receipt %></td>
+              <td><%= flow.register %></td>
+              <td><%= flow.total_amount %></td>
+              <td><%= flow.in %></td>
+              <td><%= link_to_show flow %></td>
+              <td><%= link_to_edit edit_flow_path(flow) if can? :update, flow %></td>
+              <td><%= link_to_destroy flow if can? :destroy, flow %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <%= pagination_links(@flows) %>
+<% end %>
+
+<div class="form-actions">
+  <%= link_to(
+    t('view.flows.new', default: :'label.new'),
+    new_flow_path, class: 'btn btn-primary'
+  ) if can? :create, Flow %>
+</div>
