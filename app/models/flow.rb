@@ -9,6 +9,11 @@ class Flow < ActiveRecord::Base
     allow_nil: true
   validates :in, inclusion: { in: [true, false] }
 
+  has_many :cashes
+
+  accepts_nested_attributes_for :cashes, allow_destroy: true,
+    reject_if: ->(attrs) { attrs['amount'].blank? }
+
   def to_s
     [self.code, self.subcode].join(' - ')
   end
