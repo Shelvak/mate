@@ -19,7 +19,7 @@
   </p>
   <p>
     <strong><%= Transaction.human_attribute_name 'place_id' %></strong>:
-    <%= @transaction.place_id %>
+    <%= link_to @transaction.place, @transaction.place %>
   </p>
   <p>
     <strong><%= Transaction.human_attribute_name 'card_id' %></strong>:

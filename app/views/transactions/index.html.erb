@@ -23,7 +23,7 @@
               <td><%= number_to_currency transaction.amount %></td>
               <td><%= transaction.batch %></td>
               <td><%= l transaction.expiration, format: :long %></td>
-              <td><%= transaction.place_id %></td>
+              <td><%= link_to transaction.place, transaction.place %></td>
               <td><%= link_to transaction.card, transaction.card %></td>
               <td><%= link_to_show transaction %></td>
               <td>
