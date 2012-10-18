@@ -2,12 +2,20 @@ require 'test_helper'
 
 class FlowTest < ActiveSupport::TestCase
   def setup
-    @flow = Fabricate(:flow)
+    @flow = Fabricate(:flow, cashes_attributes: { 
+      new1: { amount: 100 * rand, detail: Cash::KINDS.values.sample } 
+    })
   end
 
   test 'create' do
-    assert_difference ['Flow.count', 'Version.count'] do
-      @flow = Flow.create(Fabricate.attributes_for(:flow))
+    assert_difference 'Flow.count' do
+      assert_difference 'Version.count', 2 do
+        @flow = Flow.create(
+          Fabricate.attributes_for(:flow, cashes_attributes: {
+            new1: { amount: 100 * rand, detail: Cash::KINDS.values.sample } 
+          })
+        )
+      end 
     end 
   end
     
@@ -22,7 +30,7 @@ class FlowTest < ActiveSupport::TestCase
   end
     
   test 'destroy' do 
-    assert_difference 'Version.count' do
+    assert_difference 'Version.count', 2 do
       assert_difference('Flow.count', -1) { @flow.destroy }
     end
   end

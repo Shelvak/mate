@@ -21,15 +21,14 @@ class FlowInteracionsTets < ActionDispatch::IntegrationTest
     assert page.has_css?('.form-inputs')
 
     within '.form-inputs' do
-      fill_in Flow.human_attribute_name('code'), with: 123
-      fill_in Flow.human_attribute_name('subcode'), with: 'XYZ'
-      fill_in Flow.human_attribute_name('charged_at'),
-        with: I18n.l(Time.zone.today)
-      fill_in Flow.human_attribute_name('detail'), with: 'Some'
-      fill_in Flow.human_attribute_name('receipt'), with: 12
-      fill_in Flow.human_attribute_name('register'), with: 123123
-      fill_in Flow.human_attribute_name('total_amount'), with: 123.0
+      fill_in 'flow_detail', with: 'Some'
       select I18n.t('view.flows.in'), from: 'flow_in'
+      fill_in 'flow_charged_at', with: I18n.l(Time.zone.today)
+      fill_in 'flow_code', with: 123
+      fill_in 'flow_subcode', with: 'XYZ'
+      fill_in 'flow_receipt', with: 12
+      fill_in 'flow_register', with: 123123
+      fill_in 'flow_total_amount', with: 123.0
     end
 
     assert_difference 'Flow.count' do
@@ -78,7 +77,7 @@ class FlowInteracionsTets < ActionDispatch::IntegrationTest
     assert page.has_css?('.form-inputs')
 
     within '.form-inputs' do
-      fill_in Flow.human_attribute_name('code'), with: 1
+      fill_in 'flow_code', with: 1
     end
 
     assert_no_difference 'Flow.count' do

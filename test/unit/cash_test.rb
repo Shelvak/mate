@@ -6,8 +6,10 @@ class CashTest < ActiveSupport::TestCase
   end
 
   test 'create' do
-    assert_difference ['Cash.count', 'Version.count'] do
-      @cash = Cash.create(Fabricate.attributes_for(:cash))
+    assert_difference 'Cash.count' do
+      assert_difference 'Version.count', 2 do
+        @cash = Cash.create(Fabricate.attributes_for(:cash))
+      end
     end 
   end
     
@@ -19,26 +21,13 @@ class CashTest < ActiveSupport::TestCase
     
   test 'validates blank attributes' do
     @cash.amount = ''
-    @cash.detail = ''
     
-    assert @cash.invalid?
-    assert_equal 2, @cash.errors.size
-    assert_equal [error_message_from_model(@cash, :amount, :blank)],
-      @cash.errors[:amount]
-    assert_equal [error_message_from_model(@cash, :detail, :blank)],
-      @cash.errors[:detail]
-  end
-    
-  test 'validates unique attributes' do
-    new_cash = Fabricate(:cash)
-    @cash.detail = new_cash.detail
-
     assert @cash.invalid?
     assert_equal 1, @cash.errors.size
-    assert_equal [error_message_from_model(@cash, :detail, :taken)],
-      @cash.errors[:detail]
+    assert_equal [error_message_from_model(@cash, :amount, :blank)],
+      @cash.errors[:amount]
   end
-
+    
   test 'validates numerical attributes' do
     @cash.amount = '11a'
 

@@ -7,6 +7,6 @@ class CreateCashes < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :cashes, :detail, unique: true
+    add_index :cashes, :detail
   end
 end

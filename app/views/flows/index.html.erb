@@ -23,14 +23,20 @@
             <tr>
               <td><%= flow.code %></td>
               <td><%= flow.subcode %></td>
-              <td><%= flow.charged_at %></td>
-              <td><%= flow.detail %></td>
+              <td><%= l flow.charged_at %></td>
+              <td><%= truncate flow.detail, length: 30 %></td>
               <td><%= flow.receipt %></td>
               <td><%= flow.register %></td>
-              <td><%= flow.total_amount %></td>
-              <td><%= flow.in %></td>
+              <td><%= number_to_currency flow.total_amount %></td>
+              <td>
+                <%= flow.in ? 
+                  t('view.flows.in_short') : 
+                  t('view.flows.out_short') %>
+              </td>
               <td><%= link_to_show flow %></td>
-              <td><%= link_to_edit edit_flow_path(flow) if can? :update, flow %></td>
+              <td>
+                <%= link_to_edit edit_flow_path(flow) if can? :update, flow %>
+              </td>
               <td><%= link_to_destroy flow if can? :destroy, flow %></td>
             </tr>
           <% end %>

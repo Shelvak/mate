@@ -16,6 +16,9 @@
       card:
         one: 'Tarjeta'
         other: 'Tarjetas'
+      cash:
+        one: 'Dinero'
+        other: 'Dinero'
       client:
         one: 'Cliente'
         other: 'Clientes'
@@ -55,6 +58,9 @@
         name: 'Nombre'
         address: 'Direccion'
         website: 'Sitio web'
+      cash:
+        money: 'Dinero'
+        detail: 'Detalle'
       client:
         name: 'Nombre'
         email: 'Correo'
@@ -73,7 +79,7 @@
         receipt: 'Nro Recibo'
         register: 'Nro Registro'
         total_amount: 'Monto'
-        in: 'Entrada'
+        in: 'Tipo movimiento'
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Número de movimiento'
@@ -229,6 +235,9 @@
       edit: 'Modificar Flujo'
       in: 'Entrada de dinero'
       out: 'Salida de dinero'
+      in_short: 'Entrada'
+      out_short: 'Salida'
+      cash_detail: 'Detalle de pagos'
       kinds:
         money: 'Pesos'
         dollar: 'Dolares'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017021606) do
+ActiveRecord::Schema.define(:version => 20121017164015) do
 
   create_table "advances", :force => true do |t|
     t.date     "charged_at",                                                   :null => false
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(:version => 20121017021606) do
     t.string   "detail",                                                     :null => false
     t.datetime "created_at",                                                 :null => false
     t.datetime "updated_at",                                                 :null => false
+    t.integer  "flow_id"
   end
 
-  add_index "cashes", ["detail"], :name => "index_cashes_on_detail", :unique => true
+  add_index "cashes", ["detail"], :name => "index_cashes_on_detail"
+  add_index "cashes", ["flow_id"], :name => "index_cashes_on_flow_id"
 
   create_table "charges", :force => true do |t|
     t.date     "charged_at",                                                   :null => false

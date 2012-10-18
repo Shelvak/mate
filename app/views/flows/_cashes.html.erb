@@ -1,13 +1,12 @@
 <div class='row-fluid'>
-  <div class='span10'>
-    <div class='span2'>
-      <%= c.input :amount, label: false, input_html: { class: 'span12' } %>
-    </div>
-    <div class='span3'>
-      <%= cash_detail_select_for_flows(c) %>
-    </div>
-    <div class='span3'>
-      <%= c.link_to_remove "Quitar el dinero" %>
-    </div>
+  <div class='span2'>
+    <%= c.input :amount, label: false, input_html: { class: 'span12' } %>
+  </div>
+  <div class='span3'>
+    <%= cash_detail_select_for_flows(c) %>
+  </div>
+  <div class='span1'>
+    <%= c.link_to_remove '&#x2718;'.html_safe, 
+      class: 'iconic', title: t('label.delete') %>
   </div>
 </div>

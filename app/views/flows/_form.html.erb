@@ -1,46 +1,83 @@
-<%= simple_nested_form_for @flow, defaults: { required: false, input_html: { class: 'span12' } } do |f| %>
+<%= simple_nested_form_for @flow, defaults: { label: false, required: false, input_html: { class: 'span12' } } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <div class='row-fluid'>
-      <div class='span5'>
+      <div class='span6'>
+        <h4><%= Flow.human_attribute_name 'detail' %></h4>
+      </div>
+      <div class='span3'>
+        <h4><%= Flow.human_attribute_name 'in' %></h4>
+      </div>
+      <div class='span2'>
+        <h4><%= Flow.human_attribute_name 'charged_at' %></h4>
+      </div>
+    </div>
+
+    <div class='row-fluid'>
+      <div class='span6'>
         <%= f.input :detail %>
       </div>
       <div class='span3'>
         <%= in_or_out_select_for_flow(f) %>
       </div>
-      <div class='span2'>
+      <div class='span3'>
         <%= f.input :charged_at, as: :date_picker %>
       </div>
     </div>
 
     <div class='row-fluid'>
-      <div class='span1'>
-        <%= f.input :code %>
+      <div class='span2'>
+        <h4><%= Flow.human_attribute_name 'code' %></h4>
       </div>
-      <div class='span1'>
-        <%= f.input :subcode %>
+      <div class='span2'>
+        <h4><%= Flow.human_attribute_name 'subcode' %></h4>
+      </div>
+      <div class='span2'>
+        <h4><%= Flow.human_attribute_name 'receipt' %></h4>
       </div>
       <div class='span3'>
+        <h4><%= Flow.human_attribute_name 'register' %></h4>
+      </div>
+      <div class='span2'>
+        <h4><%= Flow.human_attribute_name 'total_amount' %></h4>
+      </div>
+    </div>
+
+    <div class='row-fluid'>
+      <div class='span2'>
+        <%= f.input :code %>
+      </div>
+      <div class='span2'>
+        <%= f.input :subcode %>
+      </div>
+      <div class='span2'>
         <%= f.input :receipt %>
       </div>
       <div class='span3'>
         <%= f.input :register %>
       </div>
-    </div>
-
-    <div id='cashes'>
-      <%= f.simple_fields_for :cashes do |c| %>
-        <%= render partial: 'cashes', locals: { c: c } %>
-      <% end %>
-    </div>
-    
-    <div>
-      <%= f.link_to_add "Agregar dinero", :cashes, class: 'btn btn-secondary' %>
+      <div class='span3'>
+        <%= f.input :total_amount %>
+      </div>
     </div>
 
     <div class='row-fluid'>
-      <%= f.input :total_amount, input_html: { class: 'span6' } %>
+      <div class='span2'>
+        <h4><%= Cash.human_attribute_name 'money' %></h4>
+      </div>
+      <div class='span3'>
+        <h4><%= Cash.human_attribute_name 'detail' %></h4>
+      </div>
+      <div class='span1'></div>
+    </div>
+
+    <%= f.simple_fields_for :cashes do |c| %>
+      <%= render partial: 'cashes', locals: { c: c } %>
+    <% end %>
+    
+    <div>
+      <%= f.link_to_add "Agregar dinero", :cashes, class: 'btn btn-secondary' %>
     </div>
   </div>
 

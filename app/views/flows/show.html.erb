@@ -1,40 +1,63 @@
 <div class="readonly-data">
-  <h2><%= @flow %></h2>
+  <div class='row-fluid'>
+    <div class='span6'>
+      <h2><%= @flow %></h2>
 
-  <p>
-    <strong><%= Flow.human_attribute_name 'code' %></strong>:
-    <%= @flow.code %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'subcode' %></strong>:
-    <%= @flow.subcode %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'charged_at' %></strong>:
-    <%= @flow.charged_at %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'detail' %></strong>:
-    <%= @flow.detail %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'receipt' %></strong>:
-    <%= @flow.receipt %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'register' %></strong>:
-    <%= @flow.register %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'total_amount' %></strong>:
-    <%= @flow.total_amount %>
-  </p>
-  <p>
-    <strong><%= Flow.human_attribute_name 'in' %></strong>:
-    <%= @flow.in %>
-  </p>
-  
+      <p>
+        <strong><%= Flow.human_attribute_name 'code' %></strong>:
+        <%= @flow.code %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'subcode' %></strong>:
+        <%= @flow.subcode %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'charged_at' %></strong>:
+        <%= l @flow.charged_at, format: :long %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'detail' %></strong>:
+        <%= @flow.detail %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'receipt' %></strong>:
+        <%= @flow.receipt %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'register' %></strong>:
+        <%= @flow.register %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'total_amount' %></strong>:
+        <%= number_to_currency @flow.total_amount %>
+      </p>
+      <p>
+        <strong><%= Flow.human_attribute_name 'in' %></strong>:
+        <%= @flow.in ? t('view.flows.in') : t('view.flows.out') %>
+      </p>
+    </div>
+
+    <div class='span6'>
+      <h3><%= t('view.flows.cash_detail') %></h3>
+      <table class='table'>
+        <thead>
+          <th><%= Cash.human_attribute_name 'money' %></th>
+          <th><%= Cash.human_attribute_name 'detail' %></th>
+        </thead>
+
+        <tbody>
+          <% @flow.cashes.each do |c| %>
+            <tr>
+              <td><%= number_to_currency c.amount %></td>
+              <td><%= t("view.flows.kinds.#{Cash::KINDS.invert[c.detail]}") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
 <div class="form-actions">
   <%= link_to t('label.edit'), edit_flow_path(@flow) if can? :update, @flow %> |
   <%= link_to t('label.list'), flows_path %>

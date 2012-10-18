@@ -9,9 +9,10 @@ module FlowsHelper
   end
 
   def cash_detail_select_for_flows(form)
-    detail_kinds = Cash::KINDS.map { |k, v| p [t("view.flows.kinds.#{k}"), v] }
+    detail_kinds = Cash::KINDS.map { |k, v| [t("view.flows.kinds.#{k}"), v] }
 
     form.input :detail, collection: detail_kinds, label: false,
-      selected: form.object.detail, prompt: false
+      selected: form.object.detail, prompt: false,
+      input_html: { class: 'span12' }
   end
 end

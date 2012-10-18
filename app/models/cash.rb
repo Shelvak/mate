@@ -8,10 +8,9 @@ class Cash < ActiveRecord::Base
     own_checks: 'o'
   }
 
-  attr_accessible :amount, :detail
+  attr_accessible :amount, :detail, :flow_id
 
-  validates :amount, :detail, presence: true
-  validates :detail, uniqueness: true
+  validates :amount, presence: true
   validates :amount, numericality: true, allow_nil: true, allow_blank: true
   
   def to_s
