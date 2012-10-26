@@ -13,8 +13,7 @@ role :web, 'acotursa.homelinux.com'
 role :app, 'acotursa.homelinux.com'
 role :db, 'acotursa.homelinux.com', primary: true
 
-before 'deploy:update_code', "deploy:install_bundler"
-
+before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
 
 namespace :deploy do
   task :start do ; end
