@@ -17,6 +17,7 @@ gem 'sidekiq'
 gem 'capistrano'
 gem 'country_select'
 gem 'nested_form'
+gem 'whenever', require: false
 
 group :assets do
   gem 'sass-rails'
