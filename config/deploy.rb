@@ -17,6 +17,8 @@ role :app, 'acotursa.homelinux.com'
 role :db, 'acotursa.homelinux.com', primary: true
 
 before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
+before "deploy:cold", "deploy:install_bundler"
+
 
 namespace :deploy do
   task :start do ; end
@@ -37,4 +39,8 @@ namespace :deploy do
       run "ln -s #{shared_files_path} #{release_files_path}"
     end
   end
+
+  task :install_bundler, :roles => :app do
+      run "type -P bundle &>/dev/null || { gem install bundler --no-rdoc --no-ri; }"
+  end 
 end
