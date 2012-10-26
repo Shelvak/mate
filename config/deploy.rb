@@ -17,7 +17,7 @@ role :app, 'acotursa.homelinux.com'
 role :db, 'acotursa.homelinux.com', primary: true
 
 before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
-before "deploy:cold", "deploy:install_bundler"
+before 'deploy:update_code', "deploy:install_bundler"
 
 
 namespace :deploy do
