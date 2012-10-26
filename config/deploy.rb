@@ -1,8 +1,5 @@
 require 'bundler/capistrano'
 
-set :whenever_command, 'bundle exec whenever'
-require 'whenever/capistrano'
-
 set :application, 'mate'
 set :repository,  'https://github.com/losmostros/mate.git'
 set :deploy_to, '/var/rails/mate'
@@ -16,8 +13,8 @@ role :web, 'acotursa.homelinux.com'
 role :app, 'acotursa.homelinux.com'
 role :db, 'acotursa.homelinux.com', primary: true
 
-before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
 before 'deploy:update_code', "deploy:install_bundler"
+before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
 
 
 namespace :deploy do
