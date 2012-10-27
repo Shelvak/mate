@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require jquery.pjax
 //= require jquery/jquery.ui.datepicker-es
 //= require jquery_nested_form
+//= require turboevents
+//= require turbolinks
 //= require date_pickers
 //= require mobile
-//= require pjax
 //= require twitter/bootstrap
 //= require autocomplete
 //= require banks

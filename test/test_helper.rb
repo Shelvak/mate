@@ -53,12 +53,9 @@ class ActionDispatch::IntegrationTest
 
     find('.btn.btn-primary').click
 
-    assert_equal root_path, current_path
-
     assert_page_has_no_errors!
-    assert page.has_css?('.alert')
-
     assert page.has_css?('.alert', I18n.t('devise.sessions.signed_in'))
+    assert_equal root_path, current_path
   end
 
   def assert_page_has_no_errors!

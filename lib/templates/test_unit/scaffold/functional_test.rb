@@ -45,7 +45,6 @@ class <%= controller_class_name %>ControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:<%= singular_table_name %>)
     assert_select '#unexpected_error', false
-    assert_template "<%= table_name %>/show"
   end
 
   test "should get edit" do
@@ -63,6 +62,7 @@ class <%= controller_class_name %>ControllerTest < ActionController::TestCase
 
     put :update, id: @<%= singular_table_name %>, 
       <%= "#{singular_table_name}: Fabricate.attributes_for(:#{singular_table_name}, attr: 'value')" %>
+
     assert_redirected_to <%= singular_table_name %>_url(assigns(:<%= singular_table_name %>))
   end
 

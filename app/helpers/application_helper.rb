@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def title
+    [t('app_name'), @title].compact.join(' | ')
+  end
+
   def show_menu_link(options = {})
     name = t("menu.#{options[:name]}")
     classes = []
@@ -7,8 +11,7 @@ module ApplicationHelper
 
     content_tag(
       :li, link_to(name, options[:path]),
-      class: (classes.empty? ? nil : classes.join(' ')),
-      data: { controllers: [*options[:controllers]].to_json }
+      class: (classes.empty? ? nil : classes.join(' '))
     )
   end
 
@@ -72,6 +75,16 @@ module ApplicationHelper
     link_to '&#xe074;'.html_safe, *args, options
   end
   
+  def link_to_show(*args)
+    options = args.extract_options!
+    
+    options['class'] ||= 'iconic'
+    options['title'] ||= t('label.show')
+    options['data-show-tooltip'] ||= true
+    
+    link_to '&#xe074;'.html_safe, *args, options
+  end
+
   def link_to_edit(*args)
     options = args.extract_options!
     
