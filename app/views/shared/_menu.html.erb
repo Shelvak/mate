@@ -11,7 +11,7 @@
           <ul class='nav'>
             <%= render partial: 'shared/menu_dropdown' %>
 
-            <%= show_menu_link(
+            <%#= show_menu_link(
               name: 'movements', controllers: 'movements', path: movements_path
             ) if can?(:read, Movement) %>
           
@@ -20,7 +20,7 @@
               path: flows_path
             ) if can?(:read, Flow) %>
   
-            <%= show_menu_link(
+            <%#= show_menu_link(
               name: 'transactions', controllers: 'transactions',
               path: transactions_path
             ) if can?(:read, Transaction) %>

@@ -5,7 +5,7 @@
   </a>
   <ul class="dropdown-menu">
     
-    <%= show_menu_link(
+    <%#= show_menu_link(
       name: 'advances', controllers: 'advances', path: advances_path
     ) if can?(:read, Advance) %>
 
@@ -13,7 +13,7 @@
       name: 'banks', controllers: 'banks', path: banks_path
     ) if can?(:read, Bank) %>
 
-    <%= show_menu_link(
+    <%#= show_menu_link(
       name: 'places', controllers: 'places',
       path: places_path
     ) if can?(:read, Place) %>
@@ -22,16 +22,16 @@
       name: 'users', controllers: 'users', path: users_path
     ) if can?(:read, User) %>
   
-    <%= show_menu_link(
+    <%#= show_menu_link(
       name: 'workplaces', controllers: 'workplaces',
       path: workplaces_path
     ) if can?(:read, Workplace) %>
   
-    <%= show_menu_link(
+    <%#= show_menu_link(
       name: 'cards', controllers: 'cards', path: cards_path
     ) if can?(:read, Card) %>
   
-    <%= show_menu_link(
+    <%#= show_menu_link(
       name: 'codes', controllers: 'codes', path: codes_path
     ) if can?(:read, Code) %>
   
