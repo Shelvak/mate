@@ -29,20 +29,26 @@ class CardTest < ActiveSupport::TestCase
 
   test 'validates blank attributes' do
     @card.name = ''
+    @card.number = ''
+    @card.expire_at = ''
 
     assert @card.invalid?
-    assert_equal 1, @card.errors.size
+    assert_equal 3, @card.errors.size
     assert_equal [error_message_from_model(@card, :name, :blank)], 
       @card.errors[:name]
+    assert_equal [error_message_from_model(@card, :number, :blank)], 
+      @card.errors[:number]
+    assert_equal [error_message_from_model(@card, :expire_at, :blank)], 
+      @card.errors[:expire_at]
   end
 
   test 'validates unique attributes' do
     new_card = Fabricate(:card)
-    @card.name = new_card.name
+    @card.number = new_card.number
 
     assert @card.invalid?
     assert_equal 1, @card.errors.size
-    assert_equal [error_message_from_model(@card, :name, :taken)],
-      @card.errors[:name]
+    assert_equal [error_message_from_model(@card, :number, :taken)],
+      @card.errors[:number]
   end 
 end

@@ -3,8 +3,22 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :website %>
+    <%= f.input :number %>
+    <%= f.input :expire_at, as: :date_picker %>
+
+    <%= f.label :bank_id %>
+    <%= f.input :auto_bank_name, label: false, input_html: {
+      value: @card.bank, class: 'span6 autocomplete-field',
+      data: {
+        'autocomplete-id-target' => '#card_bank_id',
+        'autocomplete-url' => autocomplete_for_bank_name_cards_path(
+          format: :json
+        )
+      }
+    }  %>
+    <%= f.input :bank_id, as: :hidden,
+      input_html: { class: 'autocomplete-id' } %>
+
   </div>
 
   <div class="form-actions">

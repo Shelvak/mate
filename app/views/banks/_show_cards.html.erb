@@ -1,0 +1,24 @@
+<% if @bank.cards.any? %>
+  <h3><%= t('view.banks.own_cards') %></h3>
+
+  <div class='row-fluid'>
+    <div class='span3'>
+      <h4><%= Card.human_attribute_name 'name' %></h4>
+    </div>
+    <div class='span5'>
+      <h4><%= Card.human_attribute_name 'number' %></h4>
+    </div>
+  </div>
+
+  <% @bank.cards.each do |b_c| %>
+    <div class='row-fluid'>
+      <div class='span3'>
+        <%= b_c.name %>
+      </div>
+      <div class='span5'>
+        <%= link_to b_c.number, b_c %>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

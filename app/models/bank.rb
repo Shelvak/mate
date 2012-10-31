@@ -23,6 +23,7 @@ class Bank < ActiveRecord::Base
   validates :name, uniqueness: true
 
   has_many :bank_accounts, dependent: :destroy
+  has_many :cards
   #has_many :movements
 
   accepts_nested_attributes_for :bank_accounts, allow_destroy: true,

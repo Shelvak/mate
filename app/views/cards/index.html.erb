@@ -3,12 +3,13 @@
 <% else %>
   <div class="row">
     <div class="span12">
-      <table class="table resource-list">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th><%= Card.human_attribute_name 'name' %></th>
-            <th><%= Card.human_attribute_name 'address' %></th>
-            <th><%= Card.human_attribute_name 'website' %></th>
+            <th><%= Card.human_attribute_name 'number' %></th>
+            <th><%= Card.human_attribute_name 'expire_at' %></th>
+            <th><%= Card.human_attribute_name 'bank_id' %></th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -17,8 +18,9 @@
           <% @cards.each do |card| %>
             <tr>
               <td><%= card.name %></td>
-              <td><%= card.address %></td>
-              <td><%= card.website %></td>
+              <td><%= card.number %></td>
+              <td><%= l card.expire_at, format: :month_and_year %></td>
+              <td><%= link_to card.bank, card.bank %></td>
               <td><%= link_to_show card %></td>
               <td><%= link_to_edit edit_card_path(card) if can? :update, card %></td>
               <td><%= link_to_destroy card if can? :destroy, card %></td>

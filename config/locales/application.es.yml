@@ -63,9 +63,10 @@
         currency: 'Moneda'
         amount: 'Dinero'
       card:
-        name: 'Nombre'
-        address: 'Direccion'
-        website: 'Sitio web'
+        name: 'Nombre-tipo'
+        expire_at: 'Vencimiento'
+        number: 'Número'
+        bank_id: 'Banco'
       cash:
         money: 'Dinero'
         detail: 'Detalle'
@@ -193,6 +194,7 @@
       new: 'Nuevo Banco'
       edit: 'Modificar Banco'
       add_account: 'Agregar cuenta'
+      own_cards: 'Tarjetas en el banco'
       account_kinds:
         checking_account: 'Cuenta corriente'
         savings_account: 'Caja de ahorro'
@@ -211,6 +213,7 @@
         html: 'No se ha creado ninguna tarjeta hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nueva Tarjeta</span>'
       new: 'Nueva Tarjeta'
       edit: 'Modificar Tarjeta'
+      bank_contact: 'Contacto en banco'
     clients:
       index_title: 'Listado de clientes'
       show_title: 'Detalle de cliente'

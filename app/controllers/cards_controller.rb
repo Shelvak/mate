@@ -1,4 +1,8 @@
 class CardsController < ApplicationController
+  before_filter :authenticate_user!
+
+  check_authorization
+  load_and_authorize_resource 
   
   # GET /cards
   # GET /cards.json
@@ -87,6 +91,15 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to cards_url, notice: t('view.cards.correctly_deleted') }
       format.json { head :ok }
+    end
+  end
+
+
+  def autocomplete_for_bank_name
+    banks = Bank.filtered_list(params[:q]).order('name DESC').limit(10)
+
+    respond_to do |format|
+      format.json { render json: banks }
     end
   end
 end

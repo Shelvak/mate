@@ -1,19 +1,38 @@
 <div class="readonly-data">
-  <h2><%= @card %></h2>
+  <div class='row-fluid'>
+    <div class='span6'>
+      <h2><%= @card %></h2>
 
-  <p>
-    <strong><%= Card.human_attribute_name 'name' %></strong>:
-    <%= @card.name %>
-  </p>
-  <p>
-    <strong><%= Card.human_attribute_name 'address' %></strong>:
-    <%= @card.address %>
-  </p>
-  <p>
-    <strong><%= Card.human_attribute_name 'website' %></strong>:
-    <%= link_to_website @card.website %>
-  </p>
-  
+      <p>
+        <strong><%= Card.human_attribute_name 'name' %></strong>:
+        <%= @card.name %>
+      </p>
+      <p>
+        <strong><%= Card.human_attribute_name 'number' %></strong>:
+        <%= @card.number %>
+      </p>
+      <p>
+        <strong><%= Card.human_attribute_name 'expire_at' %></strong>:
+        <%= l @card.expire_at, format: :month_and_year %>
+      </p>
+      <p>
+        <strong><%= Card.human_attribute_name 'bank_id' %></strong>:
+        <%= link_to @card.bank, @card.bank %>
+      </p>
+    </div>
+
+    <div class='span6'>
+      <h3><%= t('view.cards.bank_contact') %></h3>
+      <p>
+        <strong><%= Bank.human_attribute_name 'contact_name' %></strong>:
+        <%= @card.bank.contact_name %>
+      </p>
+      <p>
+        <strong><%= Bank.human_attribute_name 'phone' %></strong>:
+        <%= @card.bank.phone %>
+      </p>
+    </div>
+  </div>
 </div>
 <div class="form-actions">
   <%= link_to t('label.edit'), edit_card_path(@card) if can? :update, @card %> |
