@@ -19,6 +19,10 @@ Mate::Application.routes.draw do
     get :autocomplete_for_bank_name, on: :collection
   end
 
+  resources :providers do
+    get :autocomplete_for_job_areas, on: :collection
+  end
+
   resources :clients do
     get :autocomplete_for_workplace_name, on: :collection
   end
@@ -33,7 +37,7 @@ Mate::Application.routes.draw do
   end
 
   resources :advances, :banks, :codes, :flows, :places,
-    :providers, :workplaces
+    :workplaces
 
   root to: 'flows#index'
 end

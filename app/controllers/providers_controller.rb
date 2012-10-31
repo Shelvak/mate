@@ -96,7 +96,7 @@ class ProvidersController < ApplicationController
     end
   end
 
-  def autocomplete_for_job_area
+  def autocomplete_for_job_areas
     job_areas = JobArea.filtered_list(params[:q]).limit(10)
 
     respond_to do |format|

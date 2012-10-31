@@ -4,7 +4,13 @@
 
   <div class='row-fluid'>
     <div class='span6'>
-      <%= j.input :job_area, label: false, input_html: { class: 'span11' } %>
+      <%= j.input :job_area, label: false, input_html: { 
+        class: 'span11 autocomplete-field', data: {
+          'autocomplete-url' => autocomplete_for_job_areas_providers_path(
+            format: :json
+          )
+        }
+      } %>
     </div>
     <div class='1'>
       <%= j.link_to_remove '&#x2718;'.html_safe, 
