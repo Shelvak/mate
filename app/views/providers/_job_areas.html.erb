@@ -1,0 +1,20 @@
+<h3><%= t('view.providers.job_areas') %></h3>
+
+<%= f.simple_fields_for :job_areas do |j| %>
+
+  <div class='row-fluid'>
+    <div class='span6'>
+      <%= j.input :job_area, label: false, input_html: { class: 'span11' } %>
+    </div>
+    <div class='1'>
+      <%= j.link_to_remove '&#x2718;'.html_safe, 
+        class: 'iconic', title: t('label.delete') %>
+    </div>
+  </div>
+
+<% end %>
+
+<div>
+  <%= f.link_to_add t('view.providers.add_job_area'), :job_areas, 
+    class: 'btn btn-secondary' %>
+</div>

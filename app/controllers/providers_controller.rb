@@ -95,4 +95,12 @@ class ProvidersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def autocomplete_for_job_area
+    job_areas = JobArea.filtered_list(params[:q]).limit(10)
+
+    respond_to do |format|
+      format.json { render json: job_areas }
+    end
+  end
 end

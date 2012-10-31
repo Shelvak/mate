@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031191827) do
+ActiveRecord::Schema.define(:version => 20121031200532) do
 
   create_table "advances", :force => true do |t|
     t.date     "charged_at",                                :null => false
@@ -107,6 +107,15 @@ ActiveRecord::Schema.define(:version => 20121031191827) do
 
   add_index "flows", ["code"], :name => "index_flows_on_code"
   add_index "flows", ["subcode"], :name => "index_flows_on_subcode"
+
+  create_table "job_areas", :force => true do |t|
+    t.string   "job_area"
+    t.integer  "provider_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "job_areas", ["provider_id"], :name => "index_job_areas_on_provider_id"
 
   create_table "movements", :force => true do |t|
     t.date     "charged_at",                                  :null => false

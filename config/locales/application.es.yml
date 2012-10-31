@@ -93,6 +93,8 @@
         register: 'Nro Registro'
         total_amount: 'Monto total'
         in: 'Tipo movimiento'
+      job_area:
+        job_area: 'Rubro'
       movement:
         charged_at: 'Fecha carga'
         mov_number: 'Número de movimiento'
@@ -324,6 +326,8 @@
         html: 'No se ha creado ningún proveedor hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Proveedor</span>'
       new: 'Nuevo Proveedor'
       show_title_for: 'Detalle de %{provider}'
+      add_job_area: 'Agregar rubro'
+      job_areas: 'Rubros'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'
