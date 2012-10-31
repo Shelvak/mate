@@ -1,10 +1,10 @@
 <div class='row-fluid'>
   <div class='span12'>
     <div class='span3'>
-      <%= b.input :number, label: false, input_html: { class: 'span12' } %>
+      <%= b.input :number %>
     </div>
     <div class='span2'>
-      <%= b.input :office_number, label: false, input_html: { class: 'span12' }%>
+      <%= b.input :office_number %>
     </div>
     <div class='span2'>
       <%= account_kinds_select_for_bank(b) %>
@@ -13,7 +13,7 @@
       <%= currency_money_select_for_bank(b) %>
     </div>
     <div class='span1'>
-      <%= b.input :amount, label: false, input_html: { class: 'span12' }%>
+      <%= b.input :amount %>
     </div>
     <div class='span1'>
       <%= b.link_to_remove '&#x2718;'.html_safe, 

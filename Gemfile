@@ -16,7 +16,7 @@ gem 'validates_timeliness'
 gem 'sidekiq'
 gem 'capistrano'
 gem 'country_select'
-gem 'nested_form', '0.2.2' # For link_to_remove bug...
+gem 'nested_form', github: 'ryanb/nested_form'
 gem 'whenever', require: false
 
 group :assets do

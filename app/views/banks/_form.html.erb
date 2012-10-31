@@ -28,7 +28,7 @@
     </div>
 
     <%= f.simple_fields_for :bank_accounts, defaults: { label: false, input_html: { class: 'span12' } } do |b| %>
-      <%= render partial: 'bank_accounts', locals: {b: b} %>
+      <%= render partial: 'bank_accounts', locals: { b: b } %>
     <% end %>
 
     <div>
