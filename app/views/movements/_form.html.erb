@@ -37,11 +37,11 @@
         <%= f.input :devoted, input_html: { class: 'span9' } %>
       </div>
       <div class="span4">
-        <%= f.input :charged_at, as: :date_picker, 
+        <%= f.input :charged_at, as: :date_picker,
           input_html: { class: 'span9' } %>
       </div>
       <div class="span4">
-        <%= f.input :devoted_at, as: :date_picker, 
+        <%= f.input :devoted_at, as: :date_picker,
           input_html: { class: 'span9' } %>
       </div>
     </div>
@@ -75,7 +75,7 @@
             )
           }
         }  %>
-        <%= f.input :bank_id, as: :hidden, 
+        <%= f.input :bank_id, as: :hidden,
           input_html: { class: 'autocomplete-id' } %>
       </div>
     </div>
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions f-actions-bottom">
     <div class="pull-right"><%= yield :form_actions %></div>
     <%= f.button :submit, class: 'btn btn-primary' %>
   </div>

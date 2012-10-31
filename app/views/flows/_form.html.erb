@@ -75,13 +75,13 @@
     <%= f.simple_fields_for :cashes do |c| %>
       <%= render partial: 'cashes', locals: { c: c } %>
     <% end %>
-    
+
     <div>
       <%= f.link_to_add "Agregar dinero", :cashes, class: 'btn btn-secondary' %>
     </div>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions f-actions-bottom">
     <div class="pull-right"><%= yield :form_actions %></div>
     <%= f.button :submit, class: 'btn btn-primary' %>
   </div>

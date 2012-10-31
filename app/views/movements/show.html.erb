@@ -45,10 +45,10 @@
     <strong><%= Movement.human_attribute_name 'devoted_at' %></strong>:
     <%= l @movement.devoted_at, format: :long %>
   </p>
-  
+
 </div>
-<div class="form-actions">
-  <%= link_to t('label.edit'), 
+<div class="form-actions f-actions-bottom">
+  <%= link_to t('label.edit'),
     edit_movement_path(@movement) if can? :update, @movement %> |
   <%= link_to t('label.delete'), @movement if can? :destroy, @movement %>
   <div class="pull-right"><%= link_to t('label.list'), movements_path %></div>

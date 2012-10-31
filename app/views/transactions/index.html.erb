@@ -42,7 +42,7 @@
   <%= pagination_links(@transactions) %>
 <% end %>
 
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to(
     t('view.transactions.new', default: :'label.new'),
     new_transaction_path, class: 'btn btn-primary'

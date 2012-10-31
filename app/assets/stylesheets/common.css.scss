@@ -79,3 +79,8 @@ html, body {
   margin: 10px 20px;
   overflow-x: auto;
 }
+
+// Fix rounded bottom corners when there's .form-actions at the bottom
+.f-actions-bottom {
+  border-radius: 0 0 6px 6px;
+}

@@ -17,9 +17,9 @@
     <strong><%= Advance.human_attribute_name 'state' %></strong>:
     <%= @advance.state ? 'Salida' : 'Entrada' %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_advance_path(@advance) if can? :update, @advance %> |
   <%= link_to t('label.list'), advances_path %>
 </div>

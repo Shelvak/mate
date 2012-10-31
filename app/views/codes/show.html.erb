@@ -9,9 +9,9 @@
     <strong><%= Code.human_attribute_name 'detail' %></strong>:
     <%= @code.detail %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_code_path(@code) if can? :update, @code %> |
   <%= link_to t('label.list'), codes_path %>
 </div>

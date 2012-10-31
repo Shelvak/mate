@@ -26,10 +26,10 @@
     <%= @client.workplace %>
   </p>
 
-  
+
 </div>
-<div class="form-actions">
-  <%= link_to t('label.edit'), 
+<div class="form-actions f-actions-bottom">
+  <%= link_to t('label.edit'),
     edit_client_path(@client) if can? :update, @client %> |
   <%= link_to t('label.list'), clients_path %>
 </div>

@@ -17,9 +17,9 @@
     <strong><%= Workplace.human_attribute_name 'country' %></strong>:
     <%= @workplace.country %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_workplace_path(@workplace) if can? :update, @workplace %> |
   <%= link_to t('label.list'), workplaces_path %>
 </div>

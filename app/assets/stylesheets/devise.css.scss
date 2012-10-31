@@ -9,6 +9,8 @@
   @include box-shadow(0, 0, 6px, #999);
   // To fix square corners at the bottom with bootstrap action buttons
   overflow: hidden;
+  // Prepent from being too thin on less resolution
+  min-width: 350px;
 
   form {
     margin-bottom: 0em;

@@ -5,9 +5,9 @@
     <strong><%= Place.human_attribute_name 'name' %></strong>:
     <%= @place.name %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_place_path(@place) if can? :update, @place %> |
   <%= link_to t('label.list'), places_path %>
 </div>

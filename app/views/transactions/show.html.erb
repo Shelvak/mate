@@ -25,9 +25,9 @@
     <strong><%= Transaction.human_attribute_name 'card_id' %></strong>:
     <%= link_to @transaction.card, @transaction.card %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_transaction_path(@transaction) if can? :update, @transaction %> |
   <%= link_to t('label.list'), transactions_path %>
 </div>

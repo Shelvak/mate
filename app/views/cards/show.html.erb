@@ -13,9 +13,9 @@
     <strong><%= Card.human_attribute_name 'website' %></strong>:
     <%= link_to_website @card.website %>
   </p>
-  
+
 </div>
-<div class="form-actions">
+<div class="form-actions f-actions-bottom">
   <%= link_to t('label.edit'), edit_card_path(@card) if can? :update, @card %> |
   <%= link_to t('label.list'), cards_path %>
 </div>
