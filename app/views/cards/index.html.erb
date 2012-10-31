@@ -20,7 +20,7 @@
               <td><%= card.name %></td>
               <td><%= card.number %></td>
               <td><%= l card.expire_at, format: :month_and_year %></td>
-              <td><%= link_to card.bank, card.bank %></td>
+              <td><%= link_to card.bank, card.bank if card.bank %></td>
               <td><%= link_to_show card %></td>
               <td><%= link_to_edit edit_card_path(card) if can? :update, card %></td>
               <td><%= link_to_destroy card if can? :destroy, card %></td>

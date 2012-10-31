@@ -17,21 +17,22 @@
       </p>
       <p>
         <strong><%= Card.human_attribute_name 'bank_id' %></strong>:
-        <%= link_to @card.bank, @card.bank %>
+        <%= link_to @card.bank, @card.bank if @card.bank %>
       </p>
     </div>
-
-    <div class='span6'>
-      <h3><%= t('view.cards.bank_contact') %></h3>
-      <p>
-        <strong><%= Bank.human_attribute_name 'contact_name' %></strong>:
-        <%= @card.bank.contact_name %>
-      </p>
-      <p>
-        <strong><%= Bank.human_attribute_name 'phone' %></strong>:
-        <%= @card.bank.phone %>
-      </p>
-    </div>
+    <% if @card.bank %>
+      <div class='span6'>
+        <h3><%= t('view.cards.bank_contact') %></h3>
+        <p>
+          <strong><%= Bank.human_attribute_name 'contact_name' %></strong>:
+          <%= @card.bank.contact_name %>
+        </p>
+        <p>
+          <strong><%= Bank.human_attribute_name 'phone' %></strong>:
+          <%= @card.bank.phone %>
+        </p>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="form-actions">
