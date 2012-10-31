@@ -2,8 +2,20 @@
   <h2><%= t('view.clients.show_title_for', client: @client) %></h2>
 
   <p>
+    <strong><%= Client.human_attribute_name 'firm_name' %></strong>:
+    <%= @client.firm_name %>
+  </p>
+  <p>
     <strong><%= Client.human_attribute_name 'name' %></strong>:
     <%= @client.name %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'ident' %></strong>:
+    <%= @client.ident %>
+  </p>
+  <p>
+    <strong><%= Client.human_attribute_name 'address' %></strong>:
+    <%= @client.address %>
   </p>
   <p>
     <strong><%= Client.human_attribute_name 'phone' %></strong>:
@@ -14,18 +26,9 @@
     <%= mail_to @client.email %>
   </p>
   <p>
-    <strong><%= Client.human_attribute_name 'website' %></strong>:
-    <%= link_to_website @client.website %>
+    <strong><%= Client.human_attribute_name 'iva_responsive' %></strong>
+    <%= translate_iva_responsive(@client.iva_responsive) %>
   </p>
-  <p>
-    <strong><%= Client.human_attribute_name 'ident' %></strong>:
-    <%= @client.ident %>
-  </p>
-  <p>
-    <strong><%= Client.human_attribute_name 'workplace_id' %></strong>:
-    <%= @client.workplace %>
-  </p>
-
   
 </div>
 <div class="form-actions">

@@ -110,4 +110,10 @@ module ApplicationHelper
   def link_to_website(website)
     website ? link_to(website, "http://#{website}", target: '_blank') : ''
   end
+
+  def translate_iva_responsive(iva)
+    iva_in_words = Client::IVA_KINDS.invert[iva]
+
+    t("view.iva_kinds.#{iva_in_words}")
+  end
 end

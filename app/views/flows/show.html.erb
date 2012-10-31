@@ -39,21 +39,25 @@
 
     <div class='span6'>
       <h3><%= t('view.flows.cash_detail') %></h3>
-      <table class='table'>
-        <thead>
-          <th><%= Cash.human_attribute_name 'money' %></th>
-          <th><%= Cash.human_attribute_name 'detail' %></th>
-        </thead>
+      <% if @flow.cashes.any? %>
+        <table class='table'>
+          <thead>
+            <th><%= Cash.human_attribute_name 'money' %></th>
+            <th><%= Cash.human_attribute_name 'detail' %></th>
+          </thead>
 
-        <tbody>
-          <% @flow.cashes.each do |c| %>
-            <tr>
-              <td><%= number_to_currency c.amount %></td>
-              <td><%= t("view.flows.kinds.#{Cash::KINDS.invert[c.detail]}") %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+          <tbody>
+            <% @flow.cashes.each do |c| %>
+              <tr>
+                <td><%= number_to_currency c.amount %></td>
+                <td><%= t("view.flows.kinds.#{Cash::KINDS.invert[c.detail]}") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <h5><%= t('view.flows.withot_cash_details') %></h5>
+      <% end %>
     </div>
   </div>
 </div>

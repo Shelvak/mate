@@ -89,24 +89,4 @@ class ClientsControllerTest < ActionController::TestCase
     assert_select '#unexpected_error', false
     assert_template 'clients/index'
   end
-
-  test 'should get autocomplete for workplace' do
-    sign_in @user
-
-    workplace = Fabricate(:workplace)
-    get :autocomplete_for_workplace_name, format: :json, q: workplace.address
-    assert_response :success
-        
-    workplaces = ActiveSupport::JSON.decode(@response.body)
-
-    assert_equal 1, workplaces.size
-    assert workplaces.all? { |d| d['label'].match /#{workplace.address}/i }
-    
-    get :autocomplete_for_workplace_name, format: :json, q: 'pxsazt'
-    assert_response :success
-        
-    workplaces = ActiveSupport::JSON.decode(@response.body)
-
-    assert workplaces.empty? 
-  end
 end

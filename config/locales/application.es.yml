@@ -53,7 +53,6 @@
       bank:
         name: 'Nombre'
         website: 'Sitio web'
-        amount: 'Saldo'
       card:
         name: 'Nombre'
         address: 'Direccion'
@@ -62,12 +61,13 @@
         money: 'Dinero'
         detail: 'Detalle'
       client:
-        name: 'Nombre'
+        name: 'Nombre Ficticio'
         email: 'Correo'
-        ident: 'Identificación'
-        website: 'Sitio web'
+        ident: 'Identificación CUIT/CUIL'
         phone: 'Teléfono'
-        workplace_id: 'Lugar de trabajo'
+        iva_responsive: 'Responsable frente al IVA'
+        address: 'Dirección'
+        firm_name: 'Nombre Empresa'
       code:
         detail: 'Detalle'
         number: 'Número' 
@@ -78,7 +78,7 @@
         detail: 'Detalle'
         receipt: 'Nro Recibo'
         register: 'Nro Registro'
-        total_amount: 'Monto'
+        total_amount: 'Monto total'
         in: 'Tipo movimiento'
       movement:
         charged_at: 'Fecha carga'
@@ -238,11 +238,23 @@
       in_short: 'Entrada'
       out_short: 'Salida'
       cash_detail: 'Detalle de pagos'
+      withot_cash_details: 'No hay detalles...'
       kinds:
         money: 'Pesos'
         dollar: 'Dolares'
         third_checks: 'Cheques de terceros'
         own_checks: 'Cheques propios'
+    iva_kinds:
+      iva_resp_insc: 'IVA RESPONSABLE INSCRIPTO'
+      iva_resp_not_insc: 'IVA RESPONSABLE NO INSCRIPTO'
+      not_resp: 'NO RESPONSABLE'
+      exempt_iva: 'IVA EXENTO'
+      resp_monot: 'RESPONSABLE MONOTRIBUTO'
+      final_consumer: 'CONSUMIDOR FINAL'
+      not_categoriced: 'SUJETO NO CATEGORIZADO'
+      social_monot: 'MONOTRIBUTISTA SOCIAL'
+      small_event_contributor: 'PEQUEÑO CONTRIBUYENTE EVENTUAL'
+      social_small_event_contributor: 'PEQUEÑO CONTRIBUYENTE EVENTUAL SOCIAL'
     movements:
       index_title: 'Listado de movimientos'
       show_title: 'Detalle de movimiento'

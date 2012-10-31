@@ -11,23 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017164015) do
+ActiveRecord::Schema.define(:version => 20121030223532) do
 
   create_table "advances", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
+    t.date     "charged_at",                                :null => false
+    t.text     "detail",                                    :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
+    t.boolean  "state",                                     :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
+  create_table "bank_accounts", :force => true do |t|
+    t.string   "number",                                      :null => false
+    t.integer  "office_number",                               :null => false
+    t.string   "kind",          :limit => 1,                  :null => false
+    t.string   "currency",      :limit => 1,                  :null => false
+    t.decimal  "amount",                     :default => 0.0
+    t.integer  "bank_id",                                     :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
+
+  add_index "bank_accounts", ["bank_id"], :name => "index_bank_accounts_on_bank_id"
+  add_index "bank_accounts", ["number"], :name => "index_bank_accounts_on_number", :unique => true
+
   create_table "banks", :force => true do |t|
-    t.string   "name",                                                       :null => false
+    t.string   "name",         :null => false
     t.string   "website"
-    t.decimal  "amount",     :precision => 15, :scale => 2, :default => 0.0
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "phone"
+    t.string   "address"
+    t.string   "contact_name"
   end
 
   create_table "cards", :force => true do |t|
@@ -49,27 +65,19 @@ ActiveRecord::Schema.define(:version => 20121017164015) do
   add_index "cashes", ["detail"], :name => "index_cashes_on_detail"
   add_index "cashes", ["flow_id"], :name => "index_cashes_on_flow_id"
 
-  create_table "charges", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
-  end
-
   create_table "clients", :force => true do |t|
-    t.string   "name",         :null => false
+    t.string   "name",                        :null => false
     t.string   "phone"
-    t.string   "email",        :null => false
-    t.string   "website"
-    t.string   "ident",        :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "workplace_id"
+    t.string   "email"
+    t.string   "ident",                       :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.string   "firm_name",                   :null => false
+    t.string   "address"
+    t.string   "iva_responsive", :limit => 1, :null => false
   end
 
-  add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
+  add_index "clients", ["firm_name"], :name => "index_clients_on_firm_name"
   add_index "clients", ["ident"], :name => "index_clients_on_ident", :unique => true
   add_index "clients", ["name"], :name => "index_clients_on_name", :unique => true
 
@@ -110,15 +118,6 @@ ActiveRecord::Schema.define(:version => 20121017164015) do
     t.integer  "client_id",                                   :null => false
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
-  end
-
-  create_table "petty_cashes", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
   end
 
   create_table "places", :force => true do |t|

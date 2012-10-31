@@ -2,21 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :firm_name %>
     <%= f.input :name %>
     <%= f.input :ident %>
+    <%= f.input :address %>
     <%= f.input :phone %>
     <%= f.input :email %>
-    <%= f.input :website %>
-    <%= f.label :workplace_id %>
-    <%= f.input :auto_workplace_name, label: false, input_html: {
-      value: @client.workplace, class: 'autocomplete-field span6',
-      data: {
-        'autocomplete-id-target' => '#client_workplace_id',
-        'autocomplete-url' => autocomplete_for_workplace_name_clients_path(format: :json)
-        }
-      } %>
-    <%= f.input :workplace_id, as: :hidden,
-      input_html: { class: 'autocomplete-id' } %>
+    <%= iva_kinds_select_for_client(f) %>
   </div>
 
   <div class="form-actions">

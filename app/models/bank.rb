@@ -3,16 +3,29 @@ class Bank < ActiveRecord::Base
 
   has_magick_columns name: :string
 
-  has_many :movements
+  ACCOUNT_KINDS = {
+    checking_account: 'c',
+    savings_account: 's'
+  }.with_indifferent_access.freeze
+
+  MONEY_KINDS = {
+    dollar: 'd',
+    local: 'l'  
+  }.with_indifferent_access.freeze
 
   scope :with_name, ->(name) { where("#{table_name}.name like ?", "#{name}%") }
 
   default_scope order('name ASC')
 
-  attr_accessible :amount, :name, :website
+  attr_accessible :name, :website, :phone, :address, :contact_name
 
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  has_many :bank_accounts, dependent: :destroy
+  #has_many :movements
+
+  accepts_nested_attributes_for :bank_accounts, allow_destroy: false
 
   def to_s
     self.name

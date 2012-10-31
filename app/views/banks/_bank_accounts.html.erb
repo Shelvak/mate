@@ -1,0 +1,13 @@
+<div class='row-fluid'>
+  <%= b.input :number %>
+  <%= b.input :office_number %>
+  <%= account_kinds_select_for_bank(b) %>
+  <%= currency_money_select_for_bank(b) %>
+  <%= b.input :amount %>
+  <%= b.input :bank_id, as: :hidden %>
+
+  <div class='span1'>
+    <%= b.link_to_remove '&#x2718;'.html_safe, 
+      class: 'iconic', title: t('label.delete') %>
+  </div>
+</div>

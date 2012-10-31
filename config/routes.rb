@@ -31,5 +31,5 @@ Mate::Application.routes.draw do
   resources :advances, :banks, :cards, :codes, :flows, :places,
     :workplaces
 
-  root to: 'movements#index'
+  root to: 'flows#index'
 end

@@ -29,31 +29,31 @@ class ClientTest < ActiveSupport::TestCase
     
   test 'validates blank attributes' do
     @client.name = ''
-    @client.email = ''
+    @client.firm_name = ''
+    @client.iva_responsive = ''
     @client.ident = ''
     
     assert @client.invalid?
-    assert_equal 3, @client.errors.size
+    assert_equal 4, @client.errors.size
     assert_equal [error_message_from_model(@client, :name, :blank)],
       @client.errors[:name]
-    assert_equal [error_message_from_model(@client, :email, :blank)],
-      @client.errors[:email]
+    assert_equal [error_message_from_model(@client, :firm_name, :blank)],
+      @client.errors[:firm_name]
     assert_equal [error_message_from_model(@client, :ident, :blank)],
       @client.errors[:ident]
+    assert_equal [error_message_from_model(@client, :iva_responsive, :blank)],
+      @client.errors[:iva_responsive]
   end
     
   test 'validates unique attributes' do
     new_client = Fabricate(:client)
     @client.name = new_client.name
-    @client.email = new_client.email
     @client.ident = new_client.ident
 
     assert @client.invalid?
-    assert_equal 3, @client.errors.size
+    assert_equal 2, @client.errors.size
     assert_equal [error_message_from_model(@client, :name, :taken)],
       @client.errors[:name]
-    assert_equal [error_message_from_model(@client, :email, :taken)],
-      @client.errors[:email]
     assert_equal [error_message_from_model(@client, :ident, :taken)],
       @client.errors[:ident]
   end
