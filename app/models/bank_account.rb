@@ -3,7 +3,7 @@ class BankAccount < ActiveRecord::Base
 
   attr_accessible :number, :office_number, :kind, :currency, :amount, :bank_id
   
-  validates :number, :office_number, :kind, :currency, :bank_id, presence: true
+  validates :number, :office_number, :kind, :currency, presence: true
   validates :number, uniqueness: true
   
   has_one :bank

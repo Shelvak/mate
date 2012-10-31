@@ -1,0 +1,35 @@
+<% if @bank.bank_accounts.any? %>
+  <div class='row-fluid'>
+    <div class='span3'>
+      <h4><%= BankAccount.human_attribute_name 'number' %></h4>
+    </div>
+    <div class='span2'>
+      <h4><%= BankAccount.human_attribute_name 'office_number' %></h4>
+    </div>
+    <div class='span2'>
+      <h4><%= BankAccount.human_attribute_name 'kind' %></h4>
+    </div>
+    <div class='span1'>
+      <h4><%= BankAccount.human_attribute_name 'amount' %></h4>
+    </div>
+    <div class='span1'></div>
+  </div>
+
+  <% @bank.bank_accounts.each do |b_a| %>
+    <div class='row-fluid'>
+      <div class='span3'>
+        <%= b_a.number %>
+      </div>
+      <div class='span2'>
+        <%= b_a.office_number %>
+      </div>
+      <div class='span2'>
+        <%= translate_bank_account_kind(b_a.kind) %>
+      </div>
+      <div class='span1'>
+        <%= number_to_currency b_a.amount, 
+          unit: translate_bank_account_currency(b_a.currency) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

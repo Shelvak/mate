@@ -35,10 +35,9 @@ class BankAccountTest < ActiveSupport::TestCase
     @bank_account.office_number = ''
     @bank_account.kind = ''
     @bank_account.currency = ''
-    @bank_account.bank_id = ''
     
     assert @bank_account.invalid?
-    assert_equal 5, @bank_account.errors.size
+    assert_equal 4, @bank_account.errors.size
     assert_equal [error_message_from_model(@bank_account, :number, :blank)],
       @bank_account.errors[:number]
     assert_equal [
@@ -48,8 +47,6 @@ class BankAccountTest < ActiveSupport::TestCase
       @bank_account.errors[:kind]
     assert_equal [error_message_from_model(@bank_account, :currency, :blank)],
       @bank_account.errors[:currency]
-    assert_equal [error_message_from_model(@bank_account, :bank_id, :blank)],
-      @bank_account.errors[:bank_id]
   end
     
   test 'validates unique attributes' do

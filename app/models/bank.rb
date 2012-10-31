@@ -1,6 +1,5 @@
 class Bank < ActiveRecord::Base
   has_paper_trail on: [:update, :destroy]
-
   has_magick_columns name: :string
 
   ACCOUNT_KINDS = {
@@ -14,8 +13,6 @@ class Bank < ActiveRecord::Base
   }.with_indifferent_access.freeze
 
   scope :with_name, ->(name) { where("#{table_name}.name like ?", "#{name}%") }
-
-  #before_save :assign_bank_to_account
 
   default_scope order('name ASC')
 
@@ -32,6 +29,12 @@ class Bank < ActiveRecord::Base
     reject_if: ->(attrs) { 
       attrs['number'].blank? && attrs['office_number'].blank? 
     }
+
+
+  def initialize(attributes = nil, options = {})
+    super(attributes, options)
+  
+  end
 
   def to_s
     self.name
@@ -51,8 +54,4 @@ class Bank < ActiveRecord::Base
   def self.filtered_list(query)
     query.present? ? magick_search(query) : scoped
   end
-
-  #def assign_bank_to_account
-  #  self.bank_accounts.each {|b| b.bank_id = self.id}
-  #end
 end

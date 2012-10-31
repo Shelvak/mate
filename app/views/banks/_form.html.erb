@@ -1,6 +1,5 @@
 <%= simple_nested_form_for @bank, defaults: { input_html: { class: 'span5' } } do |f| %>
   <%= f.error_notification %>
-  <%= p @bank.errors %>
 
   <div class="form-inputs">
     <%= f.input :name %>
@@ -33,7 +32,8 @@
     <% end %>
 
     <div>
-      <%= f.link_to_add "Agregar cuenta", :bank_accounts, class: 'btn btn-secondary' %>
+      <%= f.link_to_add t('view.banks.add_account'), :bank_accounts, 
+        class: 'btn btn-secondary' %>
     </div>
   </div>
 
