@@ -15,8 +15,8 @@
 //= require jquery_ujs
 //= require jquery/jquery.ui.datepicker-es
 //= require jquery_nested_form
-//= require turboevents
-//= require turbolinks
+// require turboevents
+// require turbolinks
 //= require date_pickers
 //= require mobile
 //= require twitter/bootstrap

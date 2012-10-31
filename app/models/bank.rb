@@ -15,9 +15,12 @@ class Bank < ActiveRecord::Base
 
   scope :with_name, ->(name) { where("#{table_name}.name like ?", "#{name}%") }
 
+  #before_save :assign_bank_to_account
+
   default_scope order('name ASC')
 
-  attr_accessible :name, :website, :phone, :address, :contact_name
+  attr_accessible :name, :website, :phone, :address, :contact_name, 
+    :bank_accounts_attributes
 
   validates :name, presence: true
   validates :name, uniqueness: true
@@ -25,7 +28,10 @@ class Bank < ActiveRecord::Base
   has_many :bank_accounts, dependent: :destroy
   #has_many :movements
 
-  accepts_nested_attributes_for :bank_accounts, allow_destroy: false
+  accepts_nested_attributes_for :bank_accounts, allow_destroy: true,
+    reject_if: ->(attrs) { 
+      attrs['number'].blank? && attrs['office_number'].blank? 
+    }
 
   def to_s
     self.name
@@ -45,4 +51,8 @@ class Bank < ActiveRecord::Base
   def self.filtered_list(query)
     query.present? ? magick_search(query) : scoped
   end
+
+  #def assign_bank_to_account
+  #  self.bank_accounts.each {|b| b.bank_id = self.id}
+  #end
 end

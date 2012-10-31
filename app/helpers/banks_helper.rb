@@ -5,7 +5,8 @@ module BanksHelper
     end
 
     form.input :kind, collection: collect, 
-      selected: form.object.kind, prompt: false
+      selected: form.object.kind, prompt: false,
+      label: false, input_html: { class: 'span12' } 
   end
   
   def currency_money_select_for_bank(form)
@@ -14,6 +15,7 @@ module BanksHelper
     end
 
     form.input :currency, collection: collect, 
-      selected: form.object.kind, prompt: false
+      selected: form.object.kind, prompt: false,
+      label: false, input_html: { class: 'span12' } 
   end
 end

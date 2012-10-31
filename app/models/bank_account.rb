@@ -6,7 +6,7 @@ class BankAccount < ActiveRecord::Base
   validates :number, :office_number, :kind, :currency, :bank_id, presence: true
   validates :number, uniqueness: true
   
-  belongs_to :bank
+  has_one :bank
   
   def to_s
     self.number

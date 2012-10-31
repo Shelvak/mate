@@ -53,6 +53,15 @@
       bank:
         name: 'Nombre'
         website: 'Sitio web'
+        phone: 'Teléfono'
+        address: 'Dirección'
+        contact_name: 'Nombre de contacto'
+      bank_account:
+        number: 'Nº de cuenta'
+        office_number: 'Nº Sucursal'
+        kind: 'Tipo de cuenta'
+        currency: 'Moneda'
+        amount: 'Dinero'
       card:
         name: 'Nombre'
         address: 'Direccion'
@@ -65,7 +74,7 @@
         email: 'Correo'
         ident: 'Identificación CUIT/CUIL'
         phone: 'Teléfono'
-        iva_responsive: 'Responsable frente al IVA'
+        iva_responsive: 'IVA'
         address: 'Dirección'
         firm_name: 'Nombre Empresa'
       code:
@@ -183,6 +192,12 @@
         html: 'No se ha creado ningún banco hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Banco</span>'
       new: 'Nuevo Banco'
       edit: 'Modificar Banco'
+      account_kinds:
+        checking_account: 'Cuenta corriente'
+        savings_account: 'Caja de ahorro'
+      money_kinds:
+        dollar: 'u$s'
+        local: '$'
     cards:
       index_title: 'Listado de tarjetas'
       show_title: 'Detalle de tarjeta'

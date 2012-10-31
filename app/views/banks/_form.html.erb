@@ -1,5 +1,6 @@
 <%= simple_nested_form_for @bank, defaults: { input_html: { class: 'span5' } } do |f| %>
   <%= f.error_notification %>
+  <%= p @bank.errors %>
 
   <div class="form-inputs">
     <%= f.input :name %>
@@ -8,10 +9,29 @@
     <%= f.input :address %>
     <%= f.input :contact_name %>
 
-    <%= f.simple_fields_for :bank_accounts do |b| %>
-      <%= render partial: 'bank_accounts', locals: { b: b } %>
+    <div class='row-fluid'>
+      <div class='span3'>
+        <h4><%= BankAccount.human_attribute_name 'number' %></h4>
+      </div>
+      <div class='span2'>
+        <h4><%= BankAccount.human_attribute_name 'office_number' %></h4>
+      </div>
+      <div class='span2'>
+        <h4><%= BankAccount.human_attribute_name 'kind' %></h4>
+      </div>
+      <div class='span1'>
+        <h4><%= BankAccount.human_attribute_name 'currency' %></h4>
+      </div>
+      <div class='span1'>
+        <h4><%= BankAccount.human_attribute_name 'amount' %></h4>
+      </div>
+      <div class='span1'></div>
+    </div>
+
+    <%= f.simple_fields_for :bank_accounts, defaults: { label: false, input_html: { class: 'span12' } } do |b| %>
+      <%= render partial: 'bank_accounts', locals: {b: b} %>
     <% end %>
-    
+
     <div>
       <%= f.link_to_add "Agregar cuenta", :bank_accounts, class: 'btn btn-secondary' %>
     </div>
