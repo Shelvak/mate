@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20121017164015) do
 
   create_table "advances", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
+    t.date     "charged_at",                                :null => false
+    t.text     "detail",                                    :null => false
+    t.decimal  "amount",     :precision => 15, :scale => 2, :null => false
+    t.boolean  "state",                                     :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "banks", :force => true do |t|
@@ -48,15 +48,6 @@ ActiveRecord::Schema.define(:version => 20121017164015) do
 
   add_index "cashes", ["detail"], :name => "index_cashes_on_detail"
   add_index "cashes", ["flow_id"], :name => "index_cashes_on_flow_id"
-
-  create_table "charges", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
-  end
 
   create_table "clients", :force => true do |t|
     t.string   "name",         :null => false
@@ -110,15 +101,6 @@ ActiveRecord::Schema.define(:version => 20121017164015) do
     t.integer  "client_id",                                   :null => false
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
-  end
-
-  create_table "petty_cashes", :force => true do |t|
-    t.date     "charged_at",                                                   :null => false
-    t.text     "detail",                                                       :null => false
-    t.decimal  "amount",     :precision => 15, :scale => 2,                    :null => false
-    t.boolean  "state",                                     :default => false, :null => false
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
   end
 
   create_table "places", :force => true do |t|

@@ -1,8 +1,8 @@
 <% if @flows.empty? %>
   <%= render 'shared/empty_index' %>
 <% else %>
-  <div class="row">
-    <div class="span12">
+  <div class="row-fluid">
+    <div class="table-container">
       <table class="table resource-list">
         <thead>
           <tr>
@@ -29,8 +29,8 @@
               <td><%= flow.register %></td>
               <td><%= number_to_currency flow.total_amount %></td>
               <td>
-                <%= flow.in ? 
-                  t('view.flows.in_short') : 
+                <%= flow.in ?
+                  t('view.flows.in_short') :
                   t('view.flows.out_short') %>
               </td>
               <td><%= link_to_show flow %></td>
