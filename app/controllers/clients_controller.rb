@@ -9,7 +9,8 @@ class ClientsController < ApplicationController
   def index
     @title = t('view.clients.index_title')
     @searchable = true
-    @clients = Client.filtered_list(params[:q]).order('name DESC').page(params[:page])
+    @clients = Client.filtered_list(params[:q]).order('firm_name DESC').
+      page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

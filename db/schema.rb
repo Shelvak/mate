@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031154951) do
+ActiveRecord::Schema.define(:version => 20121031191827) do
 
   create_table "advances", :force => true do |t|
     t.date     "charged_at",                                :null => false
@@ -131,6 +131,22 @@ ActiveRecord::Schema.define(:version => 20121031154951) do
   end
 
   add_index "places", ["name"], :name => "index_places_on_name", :unique => true
+
+  create_table "providers", :force => true do |t|
+    t.string   "name",                        :null => false
+    t.string   "firm_name",                   :null => false
+    t.string   "ident",                       :null => false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "iva_responsive", :limit => 1, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "providers", ["firm_name"], :name => "index_providers_on_firm_name"
+  add_index "providers", ["ident"], :name => "index_providers_on_ident", :unique => true
+  add_index "providers", ["name"], :name => "index_providers_on_name", :unique => true
 
   create_table "transactions", :force => true do |t|
     t.date     "charged_at",                                :null => false

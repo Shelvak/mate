@@ -39,5 +39,8 @@
       name: 'clients', controllers: 'clients', path: clients_path
     ) if can?(:read, Client) %>
 
+    <%= show_menu_link(
+      name: 'providers', controllers: 'providers', path: providers_path
+    ) if can?(:read, Provider) %>
   </ul>
 </li>

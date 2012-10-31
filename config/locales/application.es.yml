@@ -34,6 +34,9 @@
       place:
         one: 'Establecimiento'
         other: 'Establecimientos'
+      provider:
+        one: 'Proveedor'
+        other: 'Proveedores'
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -104,6 +107,14 @@
         code_id: 'Código'
       place:
         name: 'Establecimiento'
+      provider:
+        name: 'Nombre Ficticio'
+        email: 'Correo'
+        ident: 'Identificación CUIT/CUIL'
+        phone: 'Teléfono'
+        iva_responsive: 'IVA'
+        address: 'Dirección'
+        firm_name: 'Nombre Empresa'
       user:
         name: 'Nombre'
         lastname: 'Apellido'
@@ -155,6 +166,7 @@
     flows: 'Flujos de dinero'
     movements: 'Movimientos'
     places: 'Establecimientos'
+    providers: 'Proveedores'
     users: 'Usuarios'
     transactions: 'Transacciones'
     workplaces: 'Lugares de trabajo'
@@ -299,6 +311,19 @@
         html: 'No se ha creado ningún lugar hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Establecimiento</span>'
       new: 'Nuevo Establecimiento'
       edit: 'Modificar Establecimiento'
+    providers:
+      index_title: 'Listado de proveedores'
+      show_title: 'Detalle de proveedor'
+      new_title: 'Nuevo proveedor'
+      edit_title: 'Modificar proveedor'
+      correctly_created: 'Proveedor agregado correctamente.'
+      correctly_updated: 'Proveedor actualizado correctamente.'
+      correctly_deleted: 'Proveedor eliminado correctamente.'
+      stale_object_error: 'El proveedor no pudo ser actualizado, intente nuevamente.'
+      empty_index:
+        html: 'No se ha creado ningún proveedor hasta el momento, si quiere puede hacerlo desde el botón <span class="label label-info">Nuevo Proveedor</span>'
+      new: 'Nuevo Proveedor'
+      show_title_for: 'Detalle de %{provider}'
     users:
       index_title: 'Listado de usuarios'
       show_title: 'Detalle de usuario'

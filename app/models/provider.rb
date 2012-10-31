@@ -1,21 +1,6 @@
-class Client < ActiveRecord::Base
+class Provider < ActiveRecord::Base
   has_paper_trail on: [:update, :destroy]
   has_magick_columns name: :string, ident: :string, firm_name: :string
-
-  IVA_KINDS = {
-    iva_resp_insc: 'i',
-    iva_resp_not_insc: 'R',
-    not_resp: 'n',
-    exempt_iva: 'e',
-    resp_monot: 'm',
-    final_consumer: 'f',
-    not_categoriced: 's',
-    social_monot: 't',
-    small_event_contributor: 'c',
-    social_small_event_contributor: 'v'
-  }.with_indifferent_access.freeze
-
-  #has_many :movements
 
   attr_accessible :email, :ident, :name, :phone, :address, :iva_responsive,
     :firm_name

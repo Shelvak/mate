@@ -33,7 +33,7 @@ Mate::Application.routes.draw do
   end
 
   resources :advances, :banks, :codes, :flows, :places,
-    :workplaces
+    :providers, :workplaces
 
   root to: 'flows#index'
 end

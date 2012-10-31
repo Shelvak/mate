@@ -1,0 +1,38 @@
+<div class="readonly-data">
+  <h2><%= t('view.providers.show_title_for', provider: @provider) %></h2>
+
+  <p>
+    <strong><%= Provider.human_attribute_name 'firm_name' %></strong>:
+    <%= @provider.firm_name %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'name' %></strong>:
+    <%= @provider.name %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'ident' %></strong>:
+    <%= @provider.ident %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'address' %></strong>:
+    <%= @provider.address %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'phone' %></strong>:
+    <%= @provider.phone %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'email' %></strong>:
+    <%= mail_to @provider.email %>
+  </p>
+  <p>
+    <strong><%= Provider.human_attribute_name 'iva_responsive' %></strong>
+    <%= translate_iva_responsive(@provider.iva_responsive) %>
+  </p>
+  
+</div>
+<div class="form-actions">
+  <%= link_to t('label.edit'), 
+    edit_provider_path(@provider) if can? :update, @provider %> |
+  <%= link_to t('label.list'), providers_path %>
+</div>
