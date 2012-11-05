@@ -22,14 +22,13 @@ class ClientInteractionsTest < ActionDispatch::IntegrationTest
     assert page.has_css?('.form-inputs')
 
     within '.form-inputs' do
-      fill_in Client.human_attribute_name('name'), with: 'Nation'
-      fill_in Client.human_attribute_name('ident'), with: 'nation-the-only-one'
+      fill_in Client.human_attribute_name('firm_name'), with: 'Nation'
+      fill_in Client.human_attribute_name('name'), with: 'nation-the-only-one'
+      fill_in Client.human_attribute_name('ident'), with: 'nation@thebest.com'
+      fill_in Client.human_attribute_name('address'), with: '5-3322-678'
+      fill_in Client.human_attribute_name('phone'), with: 'nation.com'
       fill_in Client.human_attribute_name('email'), with: 'nation@thebest.com'
-      fill_in Client.human_attribute_name('phone'), with: '5-3322-678'
-      fill_in Client.human_attribute_name('website'), with: 'nation.com'
-      fill_in 'client_auto_workplace_name', with: @workplace.address
-      assert page.has_xpath?("//li[@class='ui-menu-item']", visible: true)
-      find('#client_auto_workplace_name').native.send_keys :arrow_down, :tab
+      select Client.human_attribute_name('iva_responsive'), with: 'iva_resp_insc'
     end
 
     assert_difference 'Client.count' do
