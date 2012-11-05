@@ -23,12 +23,15 @@ class BankInteractionsTest < ActionDispatch::IntegrationTest
     within '.form-inputs' do
       fill_in Bank.human_attribute_name('name'), with: 'Nation'
       fill_in Bank.human_attribute_name('website'), with: 'nation.com'
-      fill_in Bank.human_attribute_name('amount'), with: 32157.32
+      fill_in Bank.human_attribute_name('phone'), with: 123456
+      fill_in Bank.human_attribute_name('address'), with: 'Guaymallen'
+      fill_in Bank.human_attribute_name('contact_name'), with:'John'
     end
 
     assert_difference 'Bank.count' do
       click_button I18n.t('helpers.submit.create', model: Bank.model_name.human)
-    end
+     end
+
 
     bank = Bank.reorder('id DESC').first
     assert_page_has_no_errors!
