@@ -3,8 +3,8 @@ require 'test_helper'
 class BankInteractionsTest < ActionDispatch::IntegrationTest
   setup do
     @bank = Fabricate(:bank)
-    Fabricate(:bank_account, :bank_id => @bank.id)
-    Fabricate(:bank_account, :bank_id => @bank.id)
+    Fabricate(:bank_account, bank_id: @bank.id)
+    Fabricate(:bank_account, bank_id: @bank.id)
   end
 
 
@@ -22,10 +22,6 @@ class BankInteractionsTest < ActionDispatch::IntegrationTest
     assert_page_has_no_errors!
     assert_equal new_bank_path, current_path
 
-    # Borrar campos de agregar cuenta (si existen) y verificar que no quede alguno
-    all('.remove_nested_fields', :visible => true).each {|r| r.click } if page.has_css?('.remove_nested_fields')
-    assert page.has_no_css?('.remove_nested_fields')
-
     # Formulario
     assert page.has_css?('.form-inputs')
     within '.form-inputs' do
@@ -36,11 +32,13 @@ class BankInteractionsTest < ActionDispatch::IntegrationTest
       fill_in Bank.human_attribute_name('contact_name'), with: 'Pedro Ortega'
     end
 
+    # Verificar que no haya campos de cuenta bancaria preexistentes
+    assert page.has_no_css?('.remove_nested_fields')
+
     # Agregar campos para dos cuentas en el formulario y verificar
     assert page.has_css?('a', :text => I18n.t('view.banks.add_account'))
-    add_account_button = find_link(I18n.t('view.banks.add_account'))
-    add_account_button.click
-    add_account_button.click
+    click_link I18n.t('view.banks.add_account')
+    click_link I18n.t('view.banks.add_account')
     accounts = all('.fields', visible: true)
     assert_equal accounts.count, 2
  
